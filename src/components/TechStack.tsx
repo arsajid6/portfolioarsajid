@@ -4,20 +4,20 @@ import { motion } from "framer-motion";
 
 const categories = [
   {
-    title: "Frontend",
-    skills: ["Next.js", "React", "JavaScript", "Tailwind CSS", "HTML5", "CSS3"]
+    title: "Frontend Development",
+    skills: ["Next.js", "React", "JavaScript", "Tailwind CSS", "HTML5"]
   },
   {
-    title: "Backend",
+    title: "Backend Development",
     skills: ["Node.js", "Express", "PHP", "Laravel", "Go"]
   },
   {
-    title: "CMS & Database",
-    skills: ["WordPress", "Elementor", "MySQL"]
+    title: "Web & App Development",
+    skills: ["Web Applications", "Management Systems", "Mobile App Development", "Browser Extensions"]
   },
   {
-    title: "Design & Tools",
-    skills: ["Figma", "UI/UX Design", "Git", "Browser APIs"]
+    title: "Design & CMS",
+    skills: ["UI/UX Design", "Figma", "WordPress", "Elementor", "MySQL"]
   }
 ];
 
