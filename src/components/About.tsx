@@ -52,7 +52,7 @@ export default function About() {
             <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
               <Layout className="w-8 h-8 text-[#d4af37] mb-4" />
               <h3 className="text-lg font-semibold text-white mb-2">UI/UX Design</h3>
-              <p className="text-sm text-gray-400">User-centric interfaces focused on usability, clarity, and conversion.</p>
+              <p className="text-sm text-gray-400">User-centric interfaces focused on usability, clarity, and a smooth user experience.</p>
             </div>
             <div className="p-6 bg-white/5 border border-white/10 rounded-2xl sm:col-span-2">
               <User className="w-8 h-8 text-[#d4af37] mb-4" />

@@ -21,7 +21,7 @@ const services = [
   },
   {
     title: "UI/UX Design",
-    description: "User-friendly interfaces focused on usability, clarity, and maximizing conversion rates for your target audience.",
+    description: "User-friendly interfaces focused on usability, clarity, and a smooth user experience.",
     icon: Layout,
   },
   {

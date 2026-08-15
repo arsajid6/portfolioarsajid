@@ -11,7 +11,7 @@ const benefits = [
   },
   {
     title: "Clean & Modern UI",
-    description: "Professional interfaces designed around usability, keeping your audience engaged and converting.",
+    description: "Professional interfaces designed around usability, clarity, and a consistent user experience.",
     icon: Layout,
   },
   {

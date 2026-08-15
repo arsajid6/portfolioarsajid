@@ -31,7 +31,7 @@ const projectsData: Project[] = [
     link: "https://hmsecurity.store/",
     caseStudy: {
       overview: "A robust corporate platform tailored for security and surveillance services. It features intuitive navigation and clear service listings.",
-      solution: "Developed a professional business website focusing on performance optimizations designed to maximize client conversion rates."
+      solution: "Developed a professional business website focusing on performance optimizations designed to provide a seamless user experience."
     }
   },
   {
