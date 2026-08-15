@@ -2,43 +2,61 @@
 
 import { motion } from "framer-motion";
 
-const technologies = [
-  { name: "Next.js", color: "hover:text-white hover:border-white/50 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]" },
-  { name: "React", color: "hover:text-[#61DAFB] hover:border-[#61DAFB]/50 hover:shadow-[0_0_15px_rgba(97,218,251,0.3)]" },
-  { name: "Node.js", color: "hover:text-[#339933] hover:border-[#339933]/50 hover:shadow-[0_0_15px_rgba(51,153,51,0.3)]" },
-  { name: "Go", color: "hover:text-[#00ADD8] hover:border-[#00ADD8]/50 hover:shadow-[0_0_15px_rgba(0,173,216,0.3)]" },
-  { name: "Laravel", color: "hover:text-[#FF2D20] hover:border-[#FF2D20]/50 hover:shadow-[0_0_15px_rgba(255,45,32,0.3)]" },
-  { name: "WordPress", color: "hover:text-[#21759B] hover:border-[#21759B]/50 hover:shadow-[0_0_15px_rgba(33,117,155,0.3)]" },
-  { name: "MySQL", color: "hover:text-[#4479A1] hover:border-[#4479A1]/50 hover:shadow-[0_0_15px_rgba(68,121,161,0.3)]" },
-  { name: "XAMPP", color: "hover:text-[#FB7A24] hover:border-[#FB7A24]/50 hover:shadow-[0_0_15px_rgba(251,122,36,0.3)]" },
-  { name: "Browser APIs / Extensions", color: "hover:text-[#F3DF49] hover:border-[#F3DF49]/50 hover:shadow-[0_0_15px_rgba(243,223,73,0.3)]" }
+const categories = [
+  {
+    title: "Frontend",
+    skills: ["Next.js", "React", "JavaScript", "Tailwind CSS", "HTML5", "CSS3"]
+  },
+  {
+    title: "Backend",
+    skills: ["Node.js", "Express", "PHP", "Laravel", "Go"]
+  },
+  {
+    title: "CMS & Database",
+    skills: ["WordPress", "Elementor", "MySQL"]
+  },
+  {
+    title: "Design & Tools",
+    skills: ["Figma", "UI/UX Design", "Git", "Browser APIs"]
+  }
 ];
 
 export default function TechStack() {
   return (
-    <section className="py-8 px-4">
-      <div className="max-w-4xl mx-auto text-center">
-        <motion.p 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+    <section id="skills" className="px-4 scroll-mt-28">
+      <div className="max-w-4xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-sm tracking-widest uppercase text-gray-500 mb-5"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
         >
-          Powered by modern technologies
-        </motion.p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Core Technologies</h2>
+          <div className="h-1 w-20 bg-[#d4af37] mx-auto rounded-full opacity-70 shadow-[0_0_10px_#d4af37]"></div>
+        </motion.div>
         
-        <div className="flex flex-wrap justify-center gap-3">
-          {technologies.map((tech, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.05 }}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {categories.map((category, idx) => (
+            <motion.div 
+              key={category.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className={`glass-card px-5 py-2 rounded-full text-sm md:text-base font-medium text-gray-300 cursor-default transition-all duration-300 border border-white/5 ${tech.color}`}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="p-6 md:p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors"
             >
-              {tech.name}
+              <h3 className="text-xl font-semibold text-white mb-5">{category.title}</h3>
+              <div className="flex flex-wrap gap-2.5">
+                {category.skills.map((skill) => (
+                  <span 
+                    key={skill}
+                    className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm text-gray-300 font-medium tracking-wide"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>

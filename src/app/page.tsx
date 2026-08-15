@@ -1,17 +1,23 @@
 import Hero from "@/components/Hero";
+import About from "@/components/About";
 import Services from "@/components/Services";
-import TechStack from "@/components/TechStack";
 import Projects from "@/components/Projects";
+import TechStack from "@/components/TechStack";
+import WhyWorkWithMe from "@/components/WhyWorkWithMe";
+import WorkProcess from "@/components/WorkProcess";
 import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-6 md:gap-10">
+    <>
       <Hero />
+      <About />
       <Services />
-      <TechStack />
       <Projects />
+      <TechStack />
+      <WhyWorkWithMe />
+      <WorkProcess />
       <Contact />
-    </div>
+    </>
   );
 }

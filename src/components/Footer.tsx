@@ -3,59 +3,119 @@
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
+const GithubIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+    <path d="M9 18c-4.51 2-5-2-7-2" />
+  </svg>
+);
+
+const quickLinks = [
+  { name: "Home", href: "#" },
+  { name: "About", href: "#about" },
+  { name: "Services", href: "#services" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" }
+];
+
+const servicesLinks = [
+  { name: "Website Development", href: "#services" },
+  { name: "WordPress Development", href: "#services" },
+  { name: "E-Commerce Stores", href: "#services" },
+  { name: "UI/UX Design", href: "#services" }
+];
+
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-[#d4af37]/20 bg-[#050505]/90 backdrop-blur-xl relative z-20 mt-10">
-      <div className="max-w-4xl mx-auto px-4 py-8 flex flex-col items-center text-center gap-6">
+    <footer className="w-full bg-[#030303] border-t border-white/5 pt-16 pb-8 relative z-20 mt-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Top: Brand Logo */}
-        <div>
-          <Image 
-            src="/ars-logo.png" 
-            alt="A.R. Sajid - Website Developer" 
-            width={450} 
-            height={150} 
-            className="h-32 md:h-36 w-auto object-contain opacity-95 hover:opacity-100 transition-opacity drop-shadow-lg"
-            priority
-          />
-        </div>
-        
-        {/* Middle: Centered Contact Row */}
-        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 w-full">
-          <a href="mailto:arsajid6@gmail.com" className="flex items-center gap-2.5 group">
-            <div className="p-2 bg-white/5 rounded-full group-hover:bg-[#d4af37]/20 transition-all border border-transparent group-hover:border-[#d4af37]/30">
-              <Mail className="w-4 h-4 text-[#d4af37]" />
-            </div>
-            <span className="text-sm text-gray-300 group-hover:text-white transition-colors tracking-wide">arsajid6@gmail.com</span>
-          </a>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           
-          <a href="https://wa.me/923234416045" target="_blank" rel="noreferrer" className="flex items-center gap-2.5 group">
-            <div className="p-2 bg-white/5 rounded-full group-hover:bg-[#d4af37]/20 transition-all border border-transparent group-hover:border-[#d4af37]/30">
-              <Phone className="w-4 h-4 text-[#d4af37]" />
+          {/* Column 1: Brand & Intro */}
+          <div className="lg:col-span-1 flex flex-col items-start">
+            <Image 
+              src="/ars-logo.png" 
+              alt="A.R. Sajid - Website Developer" 
+              width={300} 
+              height={100} 
+              className="h-20 w-auto object-contain opacity-95 mb-6 drop-shadow-lg"
+              priority
+            />
+            <p className="text-gray-400 text-sm font-light leading-relaxed mb-6">
+              Professional Website Developer & UI/UX Designer building modern, responsive, and secure custom web solutions for businesses.
+            </p>
+            <div className="flex gap-4">
+              <a href="https://github.com/arsajid6" target="_blank" rel="noopener noreferrer" className="p-2.5 bg-white/5 rounded-lg border border-white/10 hover:border-[#d4af37]/50 hover:bg-[#d4af37]/10 transition-all group" aria-label="Visit GitHub Profile">
+                <GithubIcon className="w-5 h-5 text-gray-400 group-hover:text-[#d4af37] transition-colors" />
+              </a>
             </div>
-            <span className="text-sm text-gray-300 group-hover:text-white transition-colors tracking-wide">+92 323 4416045</span>
-          </a>
-          
-          <div className="flex items-center gap-2.5">
-            <div className="p-2 bg-white/5 rounded-full">
-              <MapPin className="w-4 h-4 text-[#d4af37]" />
-            </div>
-            <span className="text-sm text-gray-300 tracking-wide">Lahore, Pakistan</span>
           </div>
+
+          {/* Column 2: Quick Links */}
+          <div>
+            <h4 className="text-white font-semibold mb-6">Quick Links</h4>
+            <ul className="flex flex-col gap-3">
+              {quickLinks.map(link => (
+                <li key={link.name}>
+                  <a href={link.href} className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors inline-flex items-center gap-2 group">
+                    <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-[#d4af37] transition-colors"></span>
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Services */}
+          <div>
+            <h4 className="text-white font-semibold mb-6">Core Services</h4>
+            <ul className="flex flex-col gap-3">
+              {servicesLinks.map(link => (
+                <li key={link.name}>
+                  <a href={link.href} className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors inline-flex items-center gap-2 group">
+                    <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-[#d4af37] transition-colors"></span>
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Contact */}
+          <div>
+            <h4 className="text-white font-semibold mb-6">Contact Info</h4>
+            <ul className="flex flex-col gap-4">
+              <li>
+                <a href="mailto:arsajid6@gmail.com" className="flex items-center gap-3 group">
+                  <Mail className="w-5 h-5 text-[#d4af37] shrink-0" />
+                  <span className="text-sm text-gray-400 group-hover:text-white transition-colors">arsajid6@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/923234416045" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
+                  <Phone className="w-5 h-5 text-[#d4af37] shrink-0" />
+                  <span className="text-sm text-gray-400 group-hover:text-white transition-colors">+92 323 4416045</span>
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <MapPin className="w-5 h-5 text-[#d4af37] shrink-0" />
+                <span className="text-sm text-gray-400">Lahore, Pakistan</span>
+              </li>
+            </ul>
+          </div>
+
         </div>
 
-        {/* Bottom: Subtle Divider & Credit */}
-        <div className="w-full max-w-sm border-t border-white/10 mt-2 pt-5">
-          <div className="flex flex-col items-center gap-1.5">
-            <p className="text-xs text-white/40 tracking-widest font-light uppercase">
-              © {new Date().getFullYear()} All Rights Reserved.
-            </p>
-            <p className="text-[11px] text-[#d4af37]/60 font-light tracking-wide">
-              Designed & Developed by Abdul Rehman Sajid
-            </p>
-          </div>
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-gray-500 tracking-wide">
+            © {new Date().getFullYear()} Abdul Rehman Sajid. All Rights Reserved.
+          </p>
+          <p className="text-xs text-[#d4af37]/80 tracking-wide font-medium">
+            Designed & Developed by A.R. Sajid
+          </p>
         </div>
-        
       </div>
     </footer>
   );
