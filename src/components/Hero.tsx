@@ -32,7 +32,7 @@ export default function Hero() {
             href="#contact"
             className="w-full sm:w-auto flex justify-center items-center gap-2 px-8 py-4 bg-white text-black rounded-full font-medium hover:bg-gray-200 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)]"
           >
-            Let's Work Together <ArrowRight className="w-4 h-4" />
+            Let&apos;s Work Together <ArrowRight className="w-4 h-4" />
           </a>
           
           <a 

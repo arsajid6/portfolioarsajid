@@ -61,7 +61,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Let's Build Something Great</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Let&apos;s Build Something Great</h2>
           <div className="h-1 w-20 bg-[#d4af37] mx-auto rounded-full opacity-70 shadow-[0_0_10px_#d4af37]"></div>
         </motion.div>
 
@@ -176,7 +176,7 @@ export default function Contact() {
               {status === "success" && (
                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mt-2 p-4 bg-[#25D366]/10 border border-[#25D366]/20 rounded-xl flex items-center gap-3 text-[#25D366]">
                   <CheckCircle2 className="w-6 h-6 shrink-0" />
-                  <p className="text-sm font-medium">Message sent successfully! I'll get back to you soon.</p>
+                  <p className="text-sm font-medium">Message sent successfully! I&apos;ll get back to you soon.</p>
                 </motion.div>
               )}
 

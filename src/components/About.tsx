@@ -27,10 +27,10 @@ export default function About() {
             className="space-y-6 text-gray-300 font-light leading-relaxed text-lg"
           >
             <p>
-              Hi, I'm <strong className="text-white font-medium">Abdul Rehman Sajid</strong>, a professional Website Developer and UI/UX Designer dedicated to building high-quality digital experiences.
+              Hi, I&apos;m <strong className="text-white font-medium">Abdul Rehman Sajid</strong>, a professional Website Developer and UI/UX Designer dedicated to building high-quality digital experiences.
             </p>
             <p>
-              My expertise lies in developing modern, responsive, and secure custom web solutions that help businesses establish a strong online presence. Whether it's a sleek corporate website, an e-commerce store, or a custom management dashboard, I focus on delivering products that are visually striking and highly functional.
+              My expertise lies in developing modern, responsive, and secure custom web solutions that help businesses establish a strong online presence. Whether it&apos;s a sleek corporate website, an e-commerce store, or a custom management dashboard, I focus on delivering products that are visually striking and highly functional.
             </p>
             <p>
               I bridge the gap between design and development, ensuring that every interface is not only beautiful but also intuitive, accessible, and optimized for performance across all devices.
