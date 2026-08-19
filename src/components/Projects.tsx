@@ -306,7 +306,7 @@ export default function Projects() {
               {/* Close button */}
               <button 
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 z-20 p-2 bg-black/50 hover:bg-[#d4af37] text-white rounded-full transition-colors border border-white/10"
+                className="absolute top-6 right-6 z-20 p-2.5 bg-black/60 hover:bg-[#d4af37] text-white rounded-full transition-colors border border-white/20"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
