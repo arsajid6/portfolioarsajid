@@ -23,6 +23,18 @@ type Project = {
 
 const projectsData: Project[] = [
   {
+    id: "accurobuild-estimating",
+    title: "AccuroBuild Estimating",
+    description: "Professional construction estimating website designed and developed for a growing estimating service, with a clear service structure, responsive layouts, and an online project inquiry experience.",
+    tags: ["WordPress", "Elementor"],
+    image: "/projects/accurobuild.png",
+    link: "https://accurobuildestimating.com/",
+    caseStudy: {
+      overview: "AccuroBuild Estimating is a professional construction estimating website built to present a wide range of estimating and quantity takeoff services to contractors, subcontractors, developers, architects, and other construction professionals.",
+      solution: "Designed and developed a structured WordPress website with clear service categories, dedicated service pages, responsive layouts, clear inquiry points, and an organized user journey for visitors looking for estimating services."
+    }
+  },
+  {
     id: "hm-security",
     title: "HM Security",
     description: "A robust corporate platform tailored for security and surveillance services.",
