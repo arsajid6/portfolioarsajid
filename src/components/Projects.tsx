@@ -298,21 +298,21 @@ export default function Projects() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-4xl bg-[#0a0a0a] border border-white/10 rounded-2xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]"
+              className="relative w-full max-w-4xl bg-[#0a0a0a] border border-white/10 rounded-2xl shadow-2xl z-10 flex flex-col max-h-[90vh]"
               role="dialog"
               aria-modal="true"
               aria-labelledby="modal-title"
             >
-              {/* Close button */}
+              {/* Close button — fixed above all content */}
               <button 
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 z-20 p-2.5 bg-black/60 hover:bg-[#d4af37] text-white rounded-full transition-colors border border-white/20"
+                className="absolute top-4 right-4 z-50 p-2.5 bg-black/80 hover:bg-[#d4af37] text-white rounded-full transition-colors border border-white/30 shadow-lg"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="overflow-y-auto flex-1">
+              <div className="overflow-y-auto flex-1 rounded-2xl">
                 {/* Hero Image */}
                 <div className="w-full h-48 sm:h-64 lg:h-80 relative bg-black/50 border-b border-white/5">
                   <Image 
