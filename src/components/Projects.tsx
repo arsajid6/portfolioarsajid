@@ -303,30 +303,34 @@ export default function Projects() {
               aria-modal="true"
               aria-labelledby="modal-title"
             >
-              {/* Close button — fixed above all content */}
-              <button 
-                onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 z-50 p-2.5 bg-black/80 hover:bg-[#d4af37] text-white rounded-full transition-colors border border-white/30 shadow-lg"
-                aria-label="Close modal"
-              >
-                <X className="w-5 h-5" />
-              </button>
+              {/* ── Sticky Header Bar with Close Button ── */}
+              <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 shrink-0">
+                <span className="text-sm font-medium text-gray-400 tracking-wide uppercase">Project Details</span>
+                <button 
+                  onClick={() => setSelectedProject(null)}
+                  className="p-2 bg-white/5 hover:bg-[#d4af37] text-white rounded-full transition-colors border border-white/20"
+                  aria-label="Close modal"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
 
-              <div className="overflow-y-auto flex-1 rounded-2xl">
+              <div className="overflow-y-auto flex-1">
                 {/* Hero Image */}
-                <div className="w-full h-48 sm:h-64 lg:h-80 relative bg-black/50 border-b border-white/5">
+                <div className="w-full h-48 sm:h-64 lg:h-72 relative bg-black/50">
                   <Image 
                     src={selectedProject.image} 
                     alt={`Screenshot of ${selectedProject.title}`} 
                     fill
                     className="object-cover object-top"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent"></div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 sm:p-10 -mt-20 relative z-10">
+                <div className="p-6 sm:p-10 -mt-16 relative z-10">
                   <h2 id="modal-title" className="text-3xl sm:text-4xl font-bold text-white mb-4 drop-shadow-md">{selectedProject.title}</h2>
+
                   
                   <div className="flex flex-wrap gap-2 mb-10">
                     {selectedProject.tags.map((tag, tagIndex) => (
