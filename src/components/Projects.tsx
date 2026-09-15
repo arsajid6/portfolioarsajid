@@ -23,6 +23,18 @@ type Project = {
 
 const projectsData: Project[] = [
   {
+    id: "zia-ul-quran",
+    title: "Zia Ul Quran Academy",
+    description: "Full-stack online academy management system for managing students, teachers, courses, schedules, attendance, fees, progress tracking, and certificates through dedicated portals.",
+    tags: ["Laravel", "PHP", "MySQL", "Blade", "JavaScript"],
+    image: "/projects/ziaulquran.png",
+    link: "https://ziaulquranacademy.online/",
+    caseStudy: {
+      overview: "Zia Ul Quran is an online Quran academy platform combining a public-facing learning website with a structured academy management system. The platform is designed to organize students, teachers, courses, class schedules, attendance, fees, learning resources, progress, and certificates.",
+      solution: "Designed and developed a web-based academy management platform with role-based access, dedicated dashboards, course and fee management, scheduling, attendance tracking, progress reporting, certificate workflows, learning resources, and automated system processes."
+    }
+  },
+  {
     id: "accurobuild-estimating",
     title: "AccuroBuild Estimating",
     description: "Professional construction estimating website designed and developed for a growing estimating service, with a clear service structure, responsive layouts, and an online project inquiry experience.",
