@@ -26,7 +26,7 @@ const services = [
   },
   {
     title: "Custom Web Applications",
-    description: "Complex business dashboards, management systems, and tailored web solutions for unique operational needs.",
+    description: "Structured web applications and management systems — including academy platforms, business dashboards, and role-based portals — built for real operational needs.",
     icon: LayoutDashboard,
   },
   {
