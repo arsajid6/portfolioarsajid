@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, ArrowRight, ArrowLeft, X } from "lucide-react";
 import Image from "next/image";
@@ -158,6 +159,11 @@ const projectsData: Project[] = [
 export default function Projects() {
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   const projectsPerPage = 6;
   const totalPages = Math.ceil(projectsData.length / projectsPerPage);
 
@@ -304,110 +310,113 @@ export default function Projects() {
       </div>
 
       {/* Case Study Modal */}
-      <AnimatePresence>
-        {selectedProject && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-            {/* Backdrop */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedProject(null)}
-              className="fixed inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
-              aria-hidden="true"
-            />
-            
-            {/* Modal Content */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-4xl bg-[#0a0a0a] border border-white/10 rounded-2xl shadow-2xl z-10 flex flex-col max-h-[90vh]"
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="modal-title"
-            >
-              {/* ── Sticky Header Bar with Close Button ── */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 shrink-0">
-                <span className="text-sm font-medium text-gray-400 tracking-wide uppercase">Project Details</span>
-                <button 
-                  onClick={() => setSelectedProject(null)}
-                  className="p-2 bg-white/5 hover:bg-[#d4af37] text-white rounded-full transition-colors border border-white/20"
-                  aria-label="Close modal"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              <div className="overflow-y-auto flex-1">
-                {/* Hero Image */}
-                <div className="w-full h-48 sm:h-64 lg:h-72 relative bg-black/50">
-                  <Image 
-                    src={selectedProject.image} 
-                    alt={`Screenshot of ${selectedProject.title}`} 
-                    fill
-                    className="object-cover object-top"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent"></div>
+      {mounted && createPortal(
+        <AnimatePresence>
+          {selectedProject && (
+            <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 md:p-8">
+              {/* Backdrop */}
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setSelectedProject(null)}
+                className="fixed inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
+                aria-hidden="true"
+              />
+              
+              {/* Modal Content */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                className="relative w-full max-w-4xl bg-[#0a0a0a] border border-white/10 rounded-2xl shadow-2xl z-10 flex flex-col max-h-[calc(100dvh-1.5rem)] sm:max-h-[calc(100dvh-3rem)] md:max-h-[85dvh]"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modal-title"
+              >
+                {/* ── Sticky Header Bar with Close Button ── */}
+                <div className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-[#0a0a0a] border-b border-white/10 shrink-0 rounded-t-2xl">
+                  <span className="text-sm font-medium text-gray-400 tracking-wide uppercase">Project Details</span>
+                  <button 
+                    onClick={() => setSelectedProject(null)}
+                    className="w-9 h-9 flex items-center justify-center bg-white/10 hover:bg-[#d4af37] text-white hover:text-black rounded-full transition-all border border-white/20 hover:border-[#d4af37] shadow-sm cursor-pointer"
+                    aria-label="Close modal"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
                 </div>
 
-                {/* Content */}
-                <div className="p-6 sm:p-10 -mt-16 relative z-10">
-                  <h2 id="modal-title" className="text-3xl sm:text-4xl font-bold text-white mb-4 drop-shadow-md">{selectedProject.title}</h2>
-
-                  
-                  <div className="flex flex-wrap gap-2 mb-10">
-                    {selectedProject.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="text-xs font-semibold tracking-wide px-3 py-1.5 bg-black/50 backdrop-blur-md border border-white/10 rounded-md text-[#d4af37]">
-                        {tag}
-                      </span>
-                    ))}
+                <div className="overflow-y-auto flex-1 rounded-b-2xl">
+                  {/* Hero Image */}
+                  <div className="w-full h-48 sm:h-64 lg:h-72 relative bg-black/50">
+                    <Image 
+                      src={selectedProject.image} 
+                      alt={`Screenshot of ${selectedProject.title}`} 
+                      fill
+                      className="object-cover object-top"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent"></div>
                   </div>
 
-                  <div className="space-y-10">
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-[#d4af37]"></div>
-                        Project Overview
-                      </h3>
-                      <p className="text-gray-300 font-light leading-relaxed text-lg">{selectedProject.caseStudy.overview}</p>
+                  {/* Content */}
+                  <div className="p-6 sm:p-10 -mt-16 relative z-10">
+                    <h2 id="modal-title" className="text-3xl sm:text-4xl font-bold text-white mb-4 drop-shadow-md">{selectedProject.title}</h2>
+
+                    
+                    <div className="flex flex-wrap gap-2 mb-10">
+                      {selectedProject.tags.map((tag, tagIndex) => (
+                        <span key={tagIndex} className="text-xs font-semibold tracking-wide px-3 py-1.5 bg-black/50 backdrop-blur-md border border-white/10 rounded-md text-[#d4af37]">
+                          {tag}
+                        </span>
+                      ))}
                     </div>
 
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-[#d4af37]"></div>
-                        Solution
-                      </h3>
-                      <p className="text-gray-300 font-light leading-relaxed text-lg">{selectedProject.caseStudy.solution}</p>
+                    <div className="space-y-10">
+                      <div>
+                        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
+                          <div className="w-2 h-2 rounded-full bg-[#d4af37]"></div>
+                          Project Overview
+                        </h3>
+                        <p className="text-gray-300 font-light leading-relaxed text-lg">{selectedProject.caseStudy.overview}</p>
+                      </div>
+
+                      <div>
+                        <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
+                          <div className="w-2 h-2 rounded-full bg-[#d4af37]"></div>
+                          Solution
+                        </h3>
+                        <p className="text-gray-300 font-light leading-relaxed text-lg">{selectedProject.caseStudy.solution}</p>
+                      </div>
+
+                      {selectedProject.footnote && (
+                        <div className="bg-white/5 border border-white/10 p-4 rounded-lg">
+                          <p className="text-sm text-gray-400 italic">
+                            * {selectedProject.footnote}
+                          </p>
+                        </div>
+                      )}
                     </div>
 
-                    {selectedProject.footnote && (
-                      <div className="bg-white/5 border border-white/10 p-4 rounded-lg">
-                        <p className="text-sm text-gray-400 italic">
-                          * {selectedProject.footnote}
-                        </p>
+                    {selectedProject.link && (
+                      <div className="mt-12 pt-8 border-t border-white/10">
+                        <a 
+                          href={selectedProject.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-8 py-4 bg-[#d4af37] text-black font-bold rounded-lg hover:bg-white hover:scale-105 transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]"
+                        >
+                          Visit Live Project <ExternalLink className="w-5 h-5" />
+                        </a>
                       </div>
                     )}
                   </div>
-
-                  {selectedProject.link && (
-                    <div className="mt-12 pt-8 border-t border-white/10">
-                      <a 
-                        href={selectedProject.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-8 py-4 bg-[#d4af37] text-black font-bold rounded-lg hover:bg-white hover:scale-105 transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]"
-                      >
-                        Visit Live Project <ExternalLink className="w-5 h-5" />
-                      </a>
-                    </div>
-                  )}
                 </div>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </section>
   );
 }
