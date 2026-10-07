@@ -23,6 +23,18 @@ type Project = {
 
 const projectsData: Project[] = [
   {
+    id: "astore-pos",
+    title: "AStore POS",
+    description: "Full-stack POS and retail management system with barcode billing, inventory control, multiple payments, returns, reports, role-based access and offline sales support.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
+    image: "/projects/astore-pos.png",
+    link: "https://astore-pos.vercel.app",
+    caseStudy: {
+      overview: "A complete web-based Point of Sale and retail management solution designed around real departmental store operations, from product setup and stock receiving to billing, returns, expenses and reporting.",
+      solution: "AStore POS combines barcode-ready checkout, inventory management, multiple payment methods, automated return stock adjustments, role-based Admin/Manager/Cashier access, offline sales support, reporting, backup/restore and secure password recovery in one connected system."
+    }
+  },
+  {
     id: "zia-ul-quran",
     title: "Zia Ul Quran Academy",
     description: "Full-stack online academy management system for managing students, teachers, courses, schedules, attendance, fees, progress tracking, and certificates through dedicated portals.",
