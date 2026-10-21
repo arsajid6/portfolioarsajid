@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, ArrowRight, ArrowLeft, X } from "lucide-react";
@@ -10,6 +10,7 @@ import Image from "next/image";
 type Project = {
   id: string;
   title: string;
+  subtitle?: string;
   description: string;
   tags: string[];
   image: string;
@@ -23,6 +24,19 @@ type Project = {
 };
 
 const projectsData: Project[] = [
+  {
+    id: "zia-graphics",
+    title: "Zia Graphics & Printers",
+    subtitle: "Business Website & Custom Admin Portal",
+    description: "A full-stack business solution featuring a responsive printing website, smart price calculator, quotation management, invoicing, payment tracking, and financial reporting.",
+    tags: ["PHP", "MySQL", "JavaScript", "HTML", "CSS", "Bootstrap"],
+    image: "/projects/ziagraphics.png",
+    link: "https://ziagraphics.click/",
+    caseStudy: {
+      overview: "Zia Graphics & Printers is a custom digital solution for a commercial printing business, combining a responsive public website with an administrative management portal to streamline customer inquiries, printing estimates, quotation management, invoicing, payments, expenses, and financial reporting.",
+      solution: "Designed and developed a production-ready web platform with dynamic services and rates, an instant price calculator, multi-service quotation cart, admin dashboard, quote-to-invoice conversion, payment tracking, expense management, and printable financial reports."
+    }
+  },
   {
     id: "astore-pos",
     title: "AStore POS",
@@ -156,14 +170,12 @@ const projectsData: Project[] = [
   }
 ];
 
+const emptySubscribe = () => () => {};
+
 export default function Projects() {
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
   const projectsPerPage = 6;
   const totalPages = Math.ceil(projectsData.length / projectsPerPage);
 
@@ -243,6 +255,9 @@ export default function Projects() {
                   </div>
                   
                   <div className="p-6 flex-1 flex flex-col relative z-20">
+                    {project.subtitle && (
+                      <p className="text-xs uppercase tracking-wider text-[#d4af37] font-semibold mb-1">{project.subtitle}</p>
+                    )}
                     <h3 className="text-xl font-bold leading-tight mb-2 text-white group-hover:text-[#d4af37] transition-colors">{project.title}</h3>
                     <p className="text-sm text-gray-400 font-light mb-6 leading-relaxed flex-1">
                       {project.description}
@@ -360,6 +375,9 @@ export default function Projects() {
 
                   {/* Content */}
                   <div className="p-6 sm:p-10 -mt-16 relative z-10">
+                    {selectedProject.subtitle && (
+                      <p className="text-xs sm:text-sm uppercase tracking-wider text-[#d4af37] font-semibold mb-2">{selectedProject.subtitle}</p>
+                    )}
                     <h2 id="modal-title" className="text-3xl sm:text-4xl font-bold text-white mb-4 drop-shadow-md">{selectedProject.title}</h2>
 
                     
@@ -398,15 +416,23 @@ export default function Projects() {
                     </div>
 
                     {selectedProject.link && (
-                      <div className="mt-12 pt-8 border-t border-white/10">
+                      <div className="mt-12 pt-8 border-t border-white/10 flex flex-wrap gap-4 items-center">
                         <a 
                           href={selectedProject.link}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-2 px-8 py-4 bg-[#d4af37] text-black font-bold rounded-lg hover:bg-white hover:scale-105 transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]"
                         >
-                          Visit Live Project <ExternalLink className="w-5 h-5" />
+                          Live Website <ExternalLink className="w-5 h-5" />
                         </a>
+                        {selectedProject.id === "zia-graphics" && (
+                          <a
+                            href="/projects/zia-graphics"
+                            className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white font-bold rounded-lg hover:bg-white/20 hover:border-[#d4af37] transition-all border border-white/20"
+                          >
+                            View Case Study &amp; Gallery &rarr;
+                          </a>
+                        )}
                       </div>
                     )}
                   </div>
