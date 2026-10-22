@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const GithubIcon = ({ className }: { className?: string }) => (
@@ -11,18 +12,18 @@ const GithubIcon = ({ className }: { className?: string }) => (
 );
 
 const quickLinks = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Projects", href: "#projects" },
-  { name: "Contact", href: "#contact" }
+  { name: "Home", href: "/" },
+  { name: "About", href: "/#about" },
+  { name: "Services", href: "/#services" },
+  { name: "Projects", href: "/#projects" },
+  { name: "Contact", href: "/#contact" }
 ];
 
 const servicesLinks = [
-  { name: "Website Development", href: "#services" },
-  { name: "WordPress Development", href: "#services" },
-  { name: "E-Commerce Stores", href: "#services" },
-  { name: "UI/UX Design", href: "#services" }
+  { name: "Website Development", href: "/#services" },
+  { name: "WordPress Development", href: "/#services" },
+  { name: "E-Commerce Stores", href: "/#services" },
+  { name: "UI/UX Design", href: "/#services" }
 ];
 
 export default function Footer() {
@@ -34,14 +35,16 @@ export default function Footer() {
           
           {/* Column 1: Brand & Intro */}
           <div className="lg:col-span-1 flex flex-col items-start">
-            <Image 
-              src="/ars-logo.png" 
-              alt="A.R. Sajid - Website Developer" 
-              width={300} 
-              height={100} 
-              className="h-20 w-auto object-contain opacity-95 mb-6 drop-shadow-lg"
-              priority
-            />
+            <Link href="/" className="inline-block group mb-6">
+              <Image 
+                src="/ars-logo.png" 
+                alt="A.R. Sajid - Website Developer" 
+                width={300} 
+                height={100} 
+                className="h-20 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity drop-shadow-lg"
+                priority
+              />
+            </Link>
             <p className="text-gray-400 text-sm font-light leading-relaxed mb-6">
               Professional Website Developer & UI/UX Designer building modern, responsive, and secure custom web solutions for businesses.
             </p>
@@ -58,10 +61,10 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {quickLinks.map(link => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors inline-flex items-center gap-2 group">
+                  <Link href={link.href} className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors inline-flex items-center gap-2 group">
                     <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-[#d4af37] transition-colors"></span>
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -73,10 +76,10 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {servicesLinks.map(link => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors inline-flex items-center gap-2 group">
+                  <Link href={link.href} className="text-sm text-gray-400 hover:text-[#d4af37] transition-colors inline-flex items-center gap-2 group">
                     <span className="w-1 h-1 rounded-full bg-gray-600 group-hover:bg-[#d4af37] transition-colors"></span>
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -93,7 +96,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/923234416045" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
+                <a 
+                  href="https://wa.me/923234416045?text=Hi%20Abdul%20Rehman%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20website%20or%20custom%20software%20project." 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center gap-3 group"
+                >
                   <Phone className="w-5 h-5 text-[#d4af37] shrink-0" />
                   <span className="text-sm text-gray-400 group-hover:text-white transition-colors">+92 323 4416045</span>
                 </a>

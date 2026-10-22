@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -16,11 +17,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Projects", href: "#projects" },
-    { name: "Skills", href: "#skills" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/#about" },
+    { name: "Services", href: "/#services" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Skills", href: "/#skills" },
   ];
 
   return (
@@ -30,27 +31,27 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        <a href="#" className="text-xl font-bold tracking-widest text-white hover:text-[#d4af37] transition-colors">
+        <Link href="/" className="text-xl font-bold tracking-widest text-white hover:text-[#d4af37] transition-colors">
           A.R. SAJID
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a 
+            <Link 
               key={link.name}
               href={link.href}
               className="text-sm font-medium text-gray-400 hover:text-[#d4af37] transition-colors"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
-          <a 
-            href="#contact"
+          <Link 
+            href="/#contact"
             className="px-6 py-2.5 bg-white/5 border border-white/10 hover:border-[#d4af37]/50 text-white rounded-full text-sm font-medium transition-all hover:bg-white/10 hover:shadow-[0_0_15px_rgba(212,175,55,0.15)]"
           >
             Let&apos;s Talk
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile Toggle */}
@@ -68,22 +69,22 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-[#050505] border-b border-white/10 shadow-2xl px-4 py-6 flex flex-col gap-5">
           {navLinks.map((link) => (
-            <a 
+            <Link 
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
               className="text-lg font-medium text-gray-300 hover:text-[#d4af37] transition-colors"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
-          <a 
-            href="#contact"
+          <Link 
+            href="/#contact"
             onClick={() => setIsOpen(false)}
             className="mt-4 px-6 py-3 bg-[#d4af37] text-[#050505] rounded-lg text-center font-bold tracking-wide shadow-lg"
           >
             Let&apos;s Talk
-          </a>
+          </Link>
         </div>
       )}
     </header>

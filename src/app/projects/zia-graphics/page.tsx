@@ -22,10 +22,16 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://portfolioarsajid.vercel.app"),
   title: "Zia Graphics & Printers — Full-Stack Case Study | Abdul Rehman Sajid",
   description: "Comprehensive case study for Zia Graphics & Printers: A custom commercial printing website and full-stack administrative management system developed with PHP, MySQL, JavaScript, and Bootstrap.",
+  alternates: {
+    canonical: "https://portfolioarsajid.vercel.app/projects/zia-graphics",
+  },
   openGraph: {
     title: "Zia Graphics & Printers — Full-Stack Case Study",
     description: "Full-Stack Business Website & Custom Admin Management System with price calculator, quotation management, invoicing, and financial reporting.",
     url: "https://portfolioarsajid.vercel.app/projects/zia-graphics",
+    siteName: "Abdul Rehman Sajid Portfolio",
+    locale: "en_US",
+    type: "article",
     images: [
       {
         url: "/projects/ziagraphics.png",
@@ -34,6 +40,12 @@ export const metadata: Metadata = {
         alt: "Zia Graphics & Printers Homepage Screenshot",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zia Graphics & Printers — Full-Stack Case Study | Abdul Rehman Sajid",
+    description: "Comprehensive case study: A custom commercial printing website and administrative management system developed with PHP, MySQL, JavaScript, and Bootstrap.",
+    images: ["/projects/ziagraphics.png"],
   },
 };
 
@@ -603,6 +615,14 @@ export default function ZiaGraphicsCaseStudy() {
           >
             Let&apos;s Work Together
           </Link>
+          <a
+            href="https://wa.me/923234416045?text=Hi%20Abdul%20Rehman%2C%20I%20saw%20your%20Zia%20Graphics%20project%20and%20would%20like%20to%20discuss%20a%20similar%20business%20management%20system."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/30 font-semibold rounded-xl hover:bg-[#25D366]/20 transition-all inline-flex items-center gap-2"
+          >
+            Discuss on WhatsApp
+          </a>
           <a
             href="https://ziagraphics.click/"
             target="_blank"

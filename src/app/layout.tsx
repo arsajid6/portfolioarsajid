@@ -11,23 +11,33 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Abdul Rehman Sajid | Website Developer & UI/UX Designer",
-  description: "Portfolio of Abdul Rehman Sajid. Professional Website Developer, UI/UX Designer, and WordPress expert building modern, responsive business solutions.",
+  metadataBase: new URL("https://portfolioarsajid.vercel.app"),
+  title: "Abdul Rehman Sajid | Full-Stack Web Developer & UI/UX Designer",
+  description: "Portfolio of Abdul Rehman Sajid — Full-Stack Web Developer & UI/UX Designer specializing in custom business websites, management systems, POS billing platforms, and WordPress solutions.",
   alternates: {
     canonical: "https://portfolioarsajid.vercel.app/",
   },
   openGraph: {
-    title: "Abdul Rehman Sajid | Web Developer & UI/UX Designer",
-    description: "Professional Website Developer building modern, responsive, and secure custom web solutions for businesses.",
+    title: "Abdul Rehman Sajid | Full-Stack Web Developer",
+    description: "Professional Full-Stack Web Developer specializing in custom business websites, management systems, POS billing platforms, and WordPress solutions.",
     url: "https://portfolioarsajid.vercel.app/",
     siteName: "Abdul Rehman Sajid Portfolio",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Abdul Rehman Sajid — Full-Stack Web Developer & UI/UX Designer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abdul Rehman Sajid | Web Developer",
-    description: "Professional Website Developer building modern, responsive custom web solutions.",
+    title: "Abdul Rehman Sajid | Full-Stack Web Developer",
+    description: "Professional Full-Stack Web Developer specializing in custom business websites, management systems, POS billing platforms, and WordPress solutions.",
+    images: ["/og-image.png"],
   },
 };
 

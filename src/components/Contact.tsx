@@ -16,6 +16,14 @@ export default function Contact() {
     
     const form = e.currentTarget;
     const formData = new FormData(form);
+
+    // Botcheck honeypot: silently complete if bot filled the hidden input
+    if (formData.get("botcheck")) {
+      setStatus("success");
+      form.reset();
+      setTimeout(() => setStatus("idle"), 5000);
+      return;
+    }
     
     const payload = JSON.stringify({
       access_key: WEB3FORMS_ACCESS_KEY,
@@ -93,7 +101,12 @@ export default function Contact() {
                 </div>
               </a>
 
-              <a href="https://wa.me/923234416045" target="_blank" rel="noopener noreferrer" className="flex items-center gap-5 group">
+              <a 
+                href="https://wa.me/923234416045?text=Hi%20Abdul%20Rehman%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20website%20or%20custom%20software%20project." 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-5 group"
+              >
                 <div className="p-4 bg-white/5 rounded-xl group-hover:bg-[#d4af37]/10 transition-colors border border-white/5 group-hover:border-[#d4af37]/30 shadow-inner">
                   <Phone className="w-6 h-6 text-[#d4af37]" />
                 </div>
@@ -123,6 +136,15 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
           >
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+              {/* Web3Forms botcheck honeypot for spam prevention */}
+              <input 
+                type="checkbox" 
+                name="botcheck" 
+                className="hidden" 
+                style={{ display: "none" }} 
+                tabIndex={-1}
+                autoComplete="off"
+              />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="name" className="text-sm font-medium text-gray-400 ml-1">Your Name</label>
