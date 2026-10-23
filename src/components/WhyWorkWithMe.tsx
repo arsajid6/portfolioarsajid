@@ -5,23 +5,23 @@ import { MonitorSmartphone, Layout, Zap, Users } from "lucide-react";
 
 const benefits = [
   {
-    title: "Responsive Design",
-    description: "Websites that adapt perfectly to desktop, tablet, and mobile screens for a seamless experience.",
+    title: "End-to-End Execution",
+    description: "From interface design and responsive layouts to database setup, backend logic, and live deployment — handled cohesively without multiple handoffs.",
     icon: MonitorSmartphone,
   },
   {
-    title: "Clean & Modern UI",
-    description: "Professional interfaces designed around usability, clarity, and a consistent user experience.",
+    title: "Built for Real Workflows",
+    description: "Engineered around how your business actually operates: quote calculators, barcode billing, academy schedules, invoice generation, and expense tracking.",
     icon: Layout,
   },
   {
-    title: "Performance Focus",
-    description: "Fast, optimized, and efficient code to ensure quick load times and smooth user interaction.",
+    title: "Easy Self-Management",
+    description: "Intuitive admin portals and WordPress Elementor setup so you can update rates, text, services, and content yourself without ongoing developer costs.",
     icon: Zap,
   },
   {
-    title: "Client-Focused",
-    description: "Solutions built strictly around your actual project requirements and business goals.",
+    title: "Direct & Clear Communication",
+    description: "Work directly with the developer building your project. Direct access, clear milestone progress updates, and reliable post-launch assistance.",
     icon: Users,
   }
 ];

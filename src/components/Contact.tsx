@@ -24,11 +24,17 @@ export default function Contact() {
       setTimeout(() => setStatus("idle"), 5000);
       return;
     }
+
+    const serviceName = formData.get("service") || "General Inquiry";
+    const clientName = formData.get("name") || "Client";
     
     const payload = JSON.stringify({
       access_key: WEB3FORMS_ACCESS_KEY,
-      name: formData.get("name"),
+      subject: `New Inquiry: ${serviceName} from ${clientName}`,
+      name: clientName,
       email: formData.get("email"),
+      service: serviceName,
+      budget: formData.get("budget") || "Not specified",
       message: formData.get("message")
     });
 
@@ -122,8 +128,19 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-1">Location</p>
-                  <p className="text-white font-medium text-lg">Lahore, Pakistan</p>
+                  <p className="text-white font-medium text-lg">Lahore, Pakistan (Remote Worldwide)</p>
                 </div>
+              </div>
+
+              <div className="pt-2">
+                <a
+                  href="https://wa.me/923234416045?text=Hi%20Abdul%20Rehman%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20website%20or%20custom%20software%20project."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/30 rounded-xl font-semibold hover:bg-[#25D366]/20 transition-all text-sm"
+                >
+                  <Phone className="w-4 h-4" /> Quick Consultation on WhatsApp
+                </a>
               </div>
             </div>
           </motion.div>
@@ -135,7 +152,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               {/* Web3Forms botcheck honeypot for spam prevention */}
               <input 
                 type="checkbox" 
@@ -145,41 +162,91 @@ export default function Contact() {
                 tabIndex={-1}
                 autoComplete="off"
               />
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-sm font-medium text-gray-400 ml-1">Your Name</label>
+                  <label htmlFor="name" className="text-sm font-medium text-gray-300 ml-1">
+                    Your Name <span className="text-[#d4af37]">*</span>
+                  </label>
                   <input 
                     type="text" 
                     id="name" 
                     name="name"
                     required
-                    className="w-full bg-[#050505] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-[#d4af37]/60 focus:bg-white/5 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all"
-                    placeholder="John Doe"
+                    className="w-full bg-[#050505] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-[#d4af37]/60 focus:bg-white/5 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all text-sm"
+                    placeholder="e.g. John Doe"
                   />
                 </div>
                 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-sm font-medium text-gray-400 ml-1">Email Address</label>
+                  <label htmlFor="email" className="text-sm font-medium text-gray-300 ml-1">
+                    Email Address <span className="text-[#d4af37]">*</span>
+                  </label>
                   <input 
                     type="email" 
                     id="email" 
                     name="email"
                     required
-                    className="w-full bg-[#050505] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-[#d4af37]/60 focus:bg-white/5 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all"
-                    placeholder="john@example.com"
+                    className="w-full bg-[#050505] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-[#d4af37]/60 focus:bg-white/5 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all text-sm"
+                    placeholder="e.g. john@example.com"
                   />
                 </div>
               </div>
 
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="service" className="text-sm font-medium text-gray-300 ml-1">
+                    Service Needed <span className="text-[#d4af37]">*</span>
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    defaultValue=""
+                    className="w-full bg-[#050505] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#d4af37]/60 focus:bg-white/5 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all cursor-pointer text-sm"
+                  >
+                    <option value="" disabled className="bg-[#111111] text-gray-500">Select a Service *</option>
+                    <option value="Business Website Development" className="bg-[#111111] text-white">Business Website Development</option>
+                    <option value="Custom Management System" className="bg-[#111111] text-white">Custom Management System</option>
+                    <option value="POS, Billing & Invoicing System" className="bg-[#111111] text-white">POS, Billing &amp; Invoicing System</option>
+                    <option value="E-Commerce Store" className="bg-[#111111] text-white">E-Commerce Development</option>
+                    <option value="WordPress Development" className="bg-[#111111] text-white">WordPress &amp; Elementor Website</option>
+                    <option value="UI/UX & Portfolio Design" className="bg-[#111111] text-white">UI/UX &amp; Portfolio Design</option>
+                    <option value="General Consultation" className="bg-[#111111] text-white">Other / General Consultation</option>
+                  </select>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="budget" className="text-sm font-medium text-gray-300 ml-1">
+                    Budget Range <span className="text-gray-500 text-xs font-normal">(Optional)</span>
+                  </label>
+                  <select
+                    id="budget"
+                    name="budget"
+                    defaultValue=""
+                    className="w-full bg-[#050505] border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#d4af37]/60 focus:bg-white/5 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all cursor-pointer text-sm"
+                  >
+                    <option value="" className="bg-[#111111] text-gray-500">Estimated Budget (Optional)</option>
+                    <option value="Under $300 USD" className="bg-[#111111] text-white">Under $300 USD (Approx. PKR 75k)</option>
+                    <option value="$300 - $700 USD" className="bg-[#111111] text-white">$300 – $700 USD (Approx. PKR 75k – 180k)</option>
+                    <option value="$700 - $1,500 USD" className="bg-[#111111] text-white">$700 – $1,500 USD (Approx. PKR 180k – 400k)</option>
+                    <option value="$1,500+ USD" className="bg-[#111111] text-white">$1,500+ USD (Custom / Enterprise)</option>
+                    <option value="Flexible / Discussion" className="bg-[#111111] text-white">Flexible / Open to discussion</option>
+                  </select>
+                </div>
+              </div>
+
               <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-sm font-medium text-gray-400 ml-1">Message</label>
+                <label htmlFor="message" className="text-sm font-medium text-gray-300 ml-1">
+                  Project Details <span className="text-[#d4af37]">*</span>
+                </label>
                 <textarea 
                   id="message" 
                   name="message"
                   required
-                  rows={6}
-                  className="w-full bg-[#050505] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-[#d4af37]/60 focus:bg-white/5 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all resize-none"
-                  placeholder="Tell me about your project..."
+                  rows={5}
+                  className="w-full bg-[#050505] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 focus:outline-none focus:border-[#d4af37]/60 focus:bg-white/5 focus:shadow-[0_0_15px_rgba(212,175,55,0.1)] transition-all resize-none text-sm leading-relaxed"
+                  placeholder="Tell me about your business goals, required functionality, timeline, or any reference websites..."
                 ></textarea>
               </div>
 

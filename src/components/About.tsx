@@ -27,13 +27,13 @@ export default function About() {
             className="space-y-6 text-gray-300 font-light leading-relaxed text-lg"
           >
             <p>
-              Hi, I&apos;m <strong className="text-white font-medium">Abdul Rehman Sajid</strong>, a Website Developer and UI/UX Designer dedicated to building high-quality digital products — from business websites and e-commerce stores to custom web applications and management systems.
+              I partner with businesses, educational institutions, retail shops, and startups to build dependable digital platforms that solve real operational challenges.
             </p>
             <p>
-              My work spans WordPress development, full-stack web applications, academy and business management systems, browser extensions, and UI/UX design. I focus on building solutions that are well-structured, maintainable, and easy to use.
+              Whether you need an authoritative corporate presence, a customized WordPress website you can easily update yourself, or a full-stack web application with barcode billing, customer quotation pipelines, and role-based staff portals — I handle the complete lifecycle from interface design to secure deployment.
             </p>
             <p>
-              I bridge the gap between design and development, ensuring every interface is intuitive, accessible, and performs well across all devices.
+              Every solution is engineered around clean code, mobile responsiveness, fast performance, and an intuitive experience for both your clients and your internal team.
             </p>
           </motion.div>
 
@@ -44,20 +44,20 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
-            <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
+            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl">
               <Code className="w-8 h-8 text-[#d4af37] mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-2">Web Development</h3>
-              <p className="text-sm text-gray-400">Business websites, e-commerce stores, and custom web applications built with modern technologies.</p>
+              <h3 className="text-lg font-semibold text-white mb-2">Business Websites</h3>
+              <p className="text-sm text-gray-400">Professional, responsive corporate websites and landing pages built to establish trust and make it easy for potential clients to inquire.</p>
             </div>
-            <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
+            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl">
               <Layout className="w-8 h-8 text-[#d4af37] mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-2">UI/UX Design</h3>
-              <p className="text-sm text-gray-400">User-centric interfaces focused on usability, clarity, and a smooth user experience.</p>
+              <h3 className="text-lg font-semibold text-white mb-2">WordPress &amp; Elementor</h3>
+              <p className="text-sm text-gray-400">Custom business websites designed for effortless self-management so you can edit text, services, and rates without code.</p>
             </div>
-            <div className="p-6 bg-white/5 border border-white/10 rounded-2xl sm:col-span-2">
+            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl sm:col-span-2">
               <User className="w-8 h-8 text-[#d4af37] mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-2">Full-Stack & Management Systems</h3>
-              <p className="text-sm text-gray-400">From frontend to backend — using Laravel, PHP, Node.js, and WordPress to build complete web applications and structured management systems.</p>
+              <h3 className="text-lg font-semibold text-white mb-2">POS, Invoicing &amp; Custom Management</h3>
+              <p className="text-sm text-gray-400">Full-stack operational software — from barcode billing counters and quote-to-invoice pipelines to multi-role academy management portals using PHP, Laravel, Supabase, and MySQL.</p>
             </div>
           </motion.div>
         </div>
