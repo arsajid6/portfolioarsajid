@@ -719,6 +719,14 @@ export default function Projects() {
                             View Case Study &amp; Gallery &rarr;
                           </a>
                         )}
+                        {selectedProject.id === "astore-pos" && (
+                          <a
+                            href="/projects/astore-pos"
+                            className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 hover:border-[#d4af37] transition-all border border-white/20 text-sm"
+                          >
+                            View Case Study &amp; Gallery &rarr;
+                          </a>
+                        )}
                       </div>
 
                       {/* Direct WhatsApp Consultation CTA for Similar Systems */}
