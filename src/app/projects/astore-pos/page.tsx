@@ -232,11 +232,6 @@ export default function AStorePosCaseStudy() {
       "@type": "Person",
       "name": "Abdul Rehman Sajid",
       "url": "https://portfolioarsajid.vercel.app"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
     }
   };
 
