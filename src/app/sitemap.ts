@@ -28,5 +28,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/projects/zia-ul-quran`,
+      lastModified: new Date("2026-10-24"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 }
