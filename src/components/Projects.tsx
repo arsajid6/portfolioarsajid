@@ -137,7 +137,7 @@ const projectsData: Project[] = [
     categories: ["Business Websites", "WordPress"],
     description: "Professional corporate website for a construction estimating firm, featuring clear service categorization, quantity takeoff scopes, and an online project blueprint inquiry flow.",
     tags: ["WordPress", "Elementor", "PHP", "MySQL", "Responsive Design"],
-    image: "/projects/accurobuild.png",
+    image: "/projects/accurobuild-homepage.webp",
     link: "https://accurobuildestimating.com/",
     caseStudy: {
       overview: "AccuroBuild Estimating is a corporate website designed and developed for a professional construction estimating and material takeoff firm serving contractors, subcontractors, developers, and architects across North America. The website establishes immediate commercial authority and provides a clear funnel for blueprint submissions.",
@@ -706,6 +706,14 @@ export default function Projects() {
                         {selectedProject.id === "zia-graphics" && (
                           <a
                             href="/projects/zia-graphics"
+                            className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 hover:border-[#d4af37] transition-all border border-white/20 text-sm"
+                          >
+                            View Case Study &amp; Gallery &rarr;
+                          </a>
+                        )}
+                        {selectedProject.id === "accurobuild-estimating" && (
+                          <a
+                            href="/projects/accurobuild"
                             className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 hover:border-[#d4af37] transition-all border border-white/20 text-sm"
                           >
                             View Case Study &amp; Gallery &rarr;
