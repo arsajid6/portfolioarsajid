@@ -57,7 +57,7 @@ export const ALL_SCREENSHOTS: ScreenshotItem[] = [
     number: 3,
     filename: "astore-payment-cash.webp",
     title: "3. Cash Checkout & Dynamic Change Due",
-    description: "Cash tender calculation modal computing exact customer balance, denominations received, and change due with zero mental math errors.",
+    description: "Cash tender calculation modal computing customer balance, denominations received, and change due to streamline manual cash handling.",
     group: "Payment Methods & Receipts",
     category: "checkout",
     pixel_dimensions: "1460×875",

@@ -72,7 +72,7 @@ const systemHighlights = [
   { value: "3 Roles", label: "Permission Hierarchy", detail: "Admin, Store Manager & Cashier access levels" },
   { value: "Multi-Tender", label: "Payment Flexibility", detail: "Cash with change calculation & card tracking" },
   { value: "Offline-Ready", label: "Billing Resilience", detail: "Local transaction queuing with pending sync status" },
-  { value: "CSI / SKU", label: "Inventory Governance", detail: "Low-stock alerts, bulk imports & barcode labels" },
+  { value: "SKU & Barcode", label: "Inventory Governance", detail: "Stock tracking, low-stock alerts & barcode label generation" },
 ];
 
 const retailChallenges = [
@@ -396,7 +396,7 @@ export default function AStorePosCaseStudy() {
         </div>
 
         <p className="text-lg text-gray-300 font-light leading-relaxed">
-          AStore POS replaces ad-hoc spreadsheets and standalone hardware terminals with a unified, browser-accessible retail hub engineered for high velocity and ironclad accounting integrity:
+          AStore POS replaces ad-hoc spreadsheets and standalone hardware terminals with a unified, browser-accessible retail hub engineered for high velocity and dependable accounting integrity:
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
@@ -406,7 +406,7 @@ export default function AStorePosCaseStudy() {
             </div>
             <h3 className="text-lg font-bold text-white">1. Accelerated Checkout</h3>
             <p className="text-sm text-gray-400 font-light leading-relaxed">
-              Sub-second barcode response and fast touch category selectors enable cashiers to clear long customer lines rapidly, reducing wait times and counter errors.
+              Fast barcode-based checkout and touch category selectors enable cashiers to clear customer lines efficiently, reducing wait times and manual entry errors.
             </p>
           </div>
 
@@ -565,7 +565,7 @@ export default function AStorePosCaseStudy() {
             </div>
             <h3 className="text-xl font-bold text-white">Cash Tender &amp; Change Math</h3>
             <p className="text-sm text-gray-400 font-light leading-relaxed">
-              Cashiers enter the customer&apos;s physical cash notes. The modal instantly computes the exact change due, eliminating register calculation errors and speeding up customer departures.
+              Cashiers enter the customer&apos;s physical cash notes. The modal automatically computes the change due, reducing register calculation discrepancies and speeding up customer checkout.
             </p>
             <div className="pt-2 text-xs font-mono text-gray-500">
               Verified File: <code className="text-gray-300">astore-payment-cash.webp</code>
@@ -619,7 +619,7 @@ export default function AStorePosCaseStudy() {
             </div>
 
             <h3 className="text-2xl font-bold text-white">
-              Zero-Downtime Billing When Internet Drops
+              Offline Billing Support &amp; Transaction Queuing
             </h3>
 
             <p className="text-gray-300 font-light leading-relaxed">
@@ -629,7 +629,7 @@ export default function AStorePosCaseStudy() {
             <ul className="space-y-2.5 text-xs sm:text-sm text-gray-300 font-light pt-2">
               <li className="flex items-start gap-2">
                 <Check className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
-                <span>Cashiers never need to turn away paying customers during ISP outages.</span>
+                <span>Enables cashiers to continue serving customers during local ISP interruptions.</span>
               </li>
               <li className="flex items-start gap-2">
                 <Check className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
