@@ -106,7 +106,7 @@ const services: Service[] = [
     ],
     proof: [
       { label: "AccuroBuild Estimating", href: "/#projects" },
-      { label: "HM Security", href: "/#projects" }
+      { label: "Papergenerator", href: "/#projects" }
     ],
     icon: Globe,
     whatsappMsg: "Hi Abdul Rehman, I visited your portfolio and would like to discuss a WordPress & Elementor website."

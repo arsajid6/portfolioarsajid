@@ -160,20 +160,21 @@ const projectsData: Project[] = [
     id: "hm-security",
     title: "HM Security",
     subtitle: "Corporate Surveillance & Security Platform",
-    categories: ["Business Websites", "WordPress"],
-    description: "A robust corporate platform tailored for security and surveillance services, featuring intuitive service listings and lead inquiry points.",
-    tags: ["WordPress", "Elementor", "PHP", "MySQL"],
+    categories: ["Business Websites"],
+    description: "A professional corporate website tailored for a security and surveillance services business, featuring structured service listings, responsive design, and clear lead inquiry points.",
+    tags: ["Custom Website", "Responsive Web Development", "Business Website"],
     image: "/projects/hmsecurity.png",
     link: "https://hmsecurity.store/",
     caseStudy: {
-      overview: "A robust corporate platform tailored for security and surveillance services. It features intuitive navigation, structured security package showcases, and clear commercial service listings.",
-      solution: "Developed a professional business website focusing on performance optimizations and mobile responsiveness designed to provide a seamless user inquiry experience.",
+      overview: "HM Security is a professional corporate web presence for a security and surveillance services business. The site presents structured security service offerings, builds commercial credibility, and provides clear pathways for residential and commercial clients to make inquiries.",
+      solution: "Developed a professional, mobile-responsive business website focused on performance, clear service presentation, and a seamless client inquiry experience.",
       features: [
         "Corporate service catalog for CCTV, access control, and guard services",
         "Lead capture inquiry forms for residential and commercial security audits",
-        "Custom Elementor modules for flexible service rate updates",
-        "Responsive cross-device layout and optimized media assets"
+        "Responsive cross-device layout and optimized media assets",
+        "Clear service category navigation and commercial credibility presentation"
       ],
+      userBenefits: "Establishes an authoritative online presence for the security business, simplifies the client inquiry journey, and presents service packages clearly to prospective residential and commercial customers.",
       inquiryText: "Hi Abdul Rehman, I saw HM Security in your portfolio and would like to discuss a corporate business website."
     }
   },
@@ -221,23 +222,28 @@ const projectsData: Project[] = [
   },
   {
     id: "browser-ext",
-    title: "Custom Browser Extension",
-    subtitle: "Voice-to-Text Productivity Tool",
+    title: "Urdu Nastaleeq Font Extension",
+    subtitle: "Chrome Extension for Urdu Typography & RTL Controls",
     categories: ["E-Commerce & Apps"],
-    description: "A productivity-enhancing tool built with vanilla JavaScript and modern Web APIs to transcribe speech directly into input fields.",
-    tags: ["JavaScript", "Web APIs", "Chrome Extension"],
-    image: "/projects/extension.png",
-    link: "https://github.com/arsajid6/Voice-to-Text-Typist",
+    description: "A Chrome browser extension that gives users direct control over Urdu Nastaleeq font rendering, body and heading typography sizing, line spacing, and RTL layout settings across websites.",
+    tags: ["Chrome Extension", "Typography & Accessibility", "JavaScript"],
+    image: "/projects/urdu-nastaleeq-settings.webp",
     caseStudy: {
-      overview: "A productivity-enhancing browser extension designed to seamlessly integrate with standard web input workflows and provide voice typing assistance.",
-      solution: "Developed using vanilla JavaScript and modern Web Speech APIs to provide reliable speech-to-text functionality directly within the browser environment.",
+      overview: "The Urdu Nastaleeq Font Extension is a Chrome browser extension designed to give users direct control over how Urdu text is rendered and displayed in their browser. It addresses a common readability challenge: standard websites often load Urdu content in suboptimal fonts with inconsistent sizing and line spacing, making extended reading uncomfortable. The extension allows users to apply the Jameel Noori Nastaleeq typeface and fine-tune typography settings to suit their reading preferences.",
+      solution: "The extension provides a compact popup interface with global and per-website on/off toggles, adjustable body and heading font sizes, and body and heading line spacing controls. An Advanced Settings page adds Smart Urdu Detection, Smart RTL, and global enable settings, alongside a live typography preview panel, a diagnostics panel confirming Jameel Noori Nastaleeq font loading, and a Save Settings interface.",
       features: [
-        "Native Web Speech API integration for real-time transcription",
-        "Context menu shortcut triggers and lightweight footprint",
-        "Cross-browser manifest architecture",
-        "Zero external tracking or third-party server dependencies"
+        "Global extension on/off toggle & per-website enable/disable toggle",
+        "Adjustable body font size & heading font size sliders",
+        "Adjustable body line spacing & heading line spacing controls",
+        "Advanced Settings page with Smart Urdu Detection setting",
+        "Smart RTL setting for right-to-left layout correction",
+        "Typography preview panel for live rendering feedback",
+        "Diagnostics panel confirming Jameel Noori Nastaleeq font loading",
+        "Save Settings interface for persisting user preferences"
       ],
-      inquiryText: "Hi Abdul Rehman, I saw your Browser Extension project in your portfolio and would like to discuss custom browser tools."
+      notice: "Interface features shown are based on the owner-supplied extension screenshots. No public repository or Chrome Web Store listing is available at this stage.",
+      userBenefits: "Gives Urdu readers the ability to improve font quality, adjust text sizing, and correct RTL layout issues across any website in Chrome — directly from a convenient popup without modifying the site itself.",
+      inquiryText: "Hi Abdul Rehman, I saw your Urdu Nastaleeq Font Extension in your portfolio and would like to discuss a custom browser extension or typography tool."
     }
   },
   {
@@ -586,18 +592,48 @@ export default function Projects() {
 
                 <div className="overflow-y-auto flex-1 rounded-b-2xl">
                   {/* Hero Image */}
-                  <div className="w-full h-48 sm:h-64 lg:h-72 relative bg-black/50">
-                    <Image 
-                      src={selectedProject.image} 
-                      alt={`Screenshot of ${selectedProject.title}`} 
-                      fill
-                      className="object-cover object-top"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent"></div>
-                  </div>
+                  {selectedProject.id === "browser-ext" ? (
+                    <div className="w-full bg-[#0d0d0d] border-b border-white/5">
+                      {/* Screenshot gallery: popup (portrait) + settings (wide) */}
+                      <div className="flex flex-col sm:flex-row gap-3 p-4 sm:p-5 items-stretch">
+                        {/* Popup screenshot — natural portrait proportions */}
+                        <div className="flex-shrink-0 mx-auto sm:mx-0 w-[180px] sm:w-[200px] rounded-xl overflow-hidden border border-white/10 shadow-lg bg-white self-start">
+                          <Image
+                            src="/projects/urdu-nastaleeq-popup.webp"
+                            alt="Urdu Nastaleeq Chrome extension popup — on/off toggles, Body Size, Heading Size, Body Spacing and Heading Spacing sliders, Advanced Settings button"
+                            width={368}
+                            height={617}
+                            className="w-full h-auto"
+                            style={{ display: 'block' }}
+                          />
+                        </div>
+                        {/* Advanced Settings screenshot — wide, fills remaining space */}
+                        <div className="flex-1 min-w-0 rounded-xl overflow-hidden border border-white/10 shadow-lg bg-white">
+                          <Image
+                            src="/projects/urdu-nastaleeq-settings.webp"
+                            alt="Urdu Nastaleeq Advanced Settings — General, Font Sizes, Line Heights, Preview, Diagnostics showing Jameel Noori Nastaleeq loaded, Save Settings"
+                            width={1921}
+                            height={1511}
+                            className="w-full h-auto"
+                            style={{ display: 'block' }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="w-full h-48 sm:h-64 lg:h-72 relative bg-black/50">
+                      <Image 
+                        src={selectedProject.image} 
+                        alt={`Screenshot of ${selectedProject.title}`} 
+                        fill
+                        className="object-cover object-top"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent"></div>
+                    </div>
+                  )}
 
                   {/* Content */}
-                  <div className="p-6 sm:p-10 -mt-16 relative z-10 space-y-8">
+                  <div className={`p-6 sm:p-10 relative z-10 space-y-8 ${selectedProject.id === "browser-ext" ? "mt-0" : "-mt-16"}`}>
                     <div>
                       {selectedProject.subtitle && (
                         <p className="text-xs sm:text-sm uppercase tracking-wider text-[#d4af37] font-semibold mb-2">{selectedProject.subtitle}</p>
