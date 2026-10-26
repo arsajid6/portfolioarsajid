@@ -20,8 +20,8 @@ export default function About() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="space-y-6 text-gray-300 font-light leading-relaxed text-lg"
@@ -38,26 +38,26 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl">
+            <div className="p-6 bg-white/[0.02] border border-white/10 hover:border-[#d4af37]/30 hover:bg-white/[0.04] rounded-2xl transition-all">
               <Code className="w-8 h-8 text-[#d4af37] mb-4" />
               <h3 className="text-lg font-semibold text-white mb-2">Business Websites</h3>
-              <p className="text-sm text-gray-400">Professional, responsive corporate websites and landing pages built to establish trust and make it easy for potential clients to inquire.</p>
+              <p className="text-sm text-gray-400 font-light leading-relaxed">Professional, responsive corporate websites and landing pages built to establish trust and make it easy for potential clients to inquire.</p>
             </div>
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl">
+            <div className="p-6 bg-white/[0.02] border border-white/10 hover:border-[#d4af37]/30 hover:bg-white/[0.04] rounded-2xl transition-all">
               <Layout className="w-8 h-8 text-[#d4af37] mb-4" />
               <h3 className="text-lg font-semibold text-white mb-2">WordPress &amp; Elementor</h3>
-              <p className="text-sm text-gray-400">Custom business websites designed for effortless self-management so you can edit text, services, and rates without code.</p>
+              <p className="text-sm text-gray-400 font-light leading-relaxed">Custom business websites designed for effortless self-management so you can edit text, services, and rates without code.</p>
             </div>
-            <div className="p-6 bg-white/[0.02] border border-white/10 rounded-2xl sm:col-span-2">
+            <div className="p-6 bg-white/[0.02] border border-white/10 hover:border-[#d4af37]/30 hover:bg-white/[0.04] rounded-2xl sm:col-span-2 transition-all">
               <User className="w-8 h-8 text-[#d4af37] mb-4" />
               <h3 className="text-lg font-semibold text-white mb-2">POS, Invoicing &amp; Custom Management</h3>
-              <p className="text-sm text-gray-400">Full-stack operational software — from barcode billing counters and quote-to-invoice pipelines to multi-role academy management portals using PHP, Laravel, Supabase, and MySQL.</p>
+              <p className="text-sm text-gray-400 font-light leading-relaxed">Full-stack operational software — from barcode billing counters and quote-to-invoice pipelines to multi-role academy management portals using PHP, Laravel, Supabase, and MySQL.</p>
             </div>
           </motion.div>
         </div>

@@ -50,21 +50,21 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} h-full antialiased scroll-smooth`}>
       <body className="min-h-full flex flex-col relative text-gray-100 selection:bg-[#d4af37]/30 selection:text-white bg-[#050505] overflow-x-hidden">
         {/* Subtle background glow effects */}
-        <div className="fixed inset-0 -z-20 pointer-events-none">
+        <div className="fixed inset-0 -z-20 pointer-events-none overflow-hidden">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-white/5 blur-[120px]" />
           <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-white/5 blur-[120px]" />
         </div>
 
-        {/* Floating abstract glass shards for luxurious depth */}
+        {/* Ambient atmospheric glows for luxurious depth */}
         <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
-          <div className="absolute top-[20%] left-[10%] w-64 h-64 bg-gradient-to-br from-white/[0.03] to-transparent backdrop-blur-[2px] border border-white/[0.02] rounded-3xl transform rotate-12 animate-float-slower" />
-          <div className="absolute top-[60%] right-[15%] w-96 h-96 bg-gradient-to-tr from-white/[0.02] to-transparent backdrop-blur-[4px] border border-white/[0.03] rounded-full transform -rotate-12 animate-float-slowest" />
-          <div className="absolute -bottom-[10%] left-[30%] w-80 h-80 bg-gradient-to-tl from-[#d4af37]/[0.02] to-transparent backdrop-blur-[1px] border border-[#d4af37]/[0.02] rounded-[4rem] transform rotate-45 animate-float-slow" />
+          <div className="absolute top-[18%] left-[5%] w-96 h-96 bg-[#d4af37]/[0.03] rounded-full blur-[140px]" />
+          <div className="absolute top-[55%] right-[8%] w-[32rem] h-[32rem] bg-white/[0.02] rounded-full blur-[160px]" />
+          <div className="absolute bottom-[5%] left-[25%] w-96 h-96 bg-[#d4af37]/[0.025] rounded-full blur-[140px]" />
         </div>
         
         <Navbar />
         
-        <main className="flex-1 w-full max-w-6xl mx-auto pt-28 pb-12 relative z-10 flex flex-col gap-24 sm:gap-32">
+        <main className="flex-1 w-full max-w-6xl mx-auto pt-28 pb-12 relative z-10 flex flex-col gap-24 sm:gap-32 overflow-x-clip">
           {children}
         </main>
         

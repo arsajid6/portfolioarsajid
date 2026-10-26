@@ -396,7 +396,7 @@ export default function Projects() {
 
         {/* ── Category Filter Tabs ── */}
         <div 
-          className="flex flex-wrap justify-center items-center gap-2 sm:gap-2.5 mb-12" 
+          className="flex flex-wrap justify-center items-center gap-2 sm:gap-2.5 mb-10 sm:mb-12 max-w-4xl mx-auto" 
           role="tablist" 
           aria-label="Project category filters"
         >
@@ -415,9 +415,9 @@ export default function Projects() {
                   setSelectedCategory(category);
                   setCurrentPage(0);
                 }}
-                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-2 cursor-pointer border ${
+                className={`px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-2 cursor-pointer border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37] ${
                   isActive
-                    ? "bg-[#d4af37] text-black border-[#d4af37] font-bold shadow-[0_0_20px_rgba(212,175,55,0.3)] scale-[1.03]"
+                    ? "bg-[#d4af37] text-black border-[#d4af37] font-bold shadow-[0_0_20px_rgba(212,175,55,0.3)] scale-[1.02]"
                     : "bg-white/[0.03] text-gray-400 border-white/10 hover:border-[#d4af37]/40 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -459,22 +459,58 @@ export default function Projects() {
                   aria-label={`View details for ${project.title}`}
                 >
                   <div className="aspect-video w-full relative overflow-hidden bg-black/50">
-                    <Image 
-                      src={project.image} 
-                      alt={`Screenshot of ${project.title}`} 
-                      fill
-                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500"></div>
+                    {project.id === "browser-ext" ? (
+                      <div className="w-full h-full relative overflow-hidden bg-[#0a0a0c] flex items-center justify-center p-3">
+                        {/* Faint ambient settings preview in background */}
+                        <Image 
+                          src="/projects/urdu-nastaleeq-settings.webp" 
+                          alt="Urdu Nastaleeq Extension settings layout" 
+                          fill
+                          className="object-cover object-top opacity-20 blur-[1.5px] scale-105"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-black/40 to-transparent pointer-events-none"></div>
+                        {/* Crisp, authentic foreground popup with natural proportions */}
+                        <div className="relative z-10 h-[88%] aspect-[368/617] rounded-lg overflow-hidden shadow-2xl border border-white/20 bg-white group-hover:scale-105 transition-transform duration-500">
+                          <Image
+                            src="/projects/urdu-nastaleeq-popup.webp"
+                            alt="Urdu Nastaleeq Chrome extension popup showing typography controls and toggles"
+                            fill
+                            className="object-contain"
+                            sizes="180px"
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        <Image 
+                          src={project.image} 
+                          alt={`Screenshot of ${project.title}`} 
+                          fill
+                          className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500"></div>
+                      </>
+                    )}
                   </div>
                   
                   <div className="p-6 flex-1 flex flex-col relative z-20">
-                    {project.subtitle && (
-                      <p className="text-xs uppercase tracking-wider text-[#d4af37] font-semibold mb-1.5">{project.subtitle}</p>
-                    )}
-                    <h3 className="text-xl font-bold leading-tight mb-2 text-white group-hover:text-[#d4af37] transition-colors">{project.title}</h3>
-                    <p className="text-sm text-gray-400 font-light mb-6 leading-relaxed flex-1">
+                    <div className="min-h-[1.75rem] sm:min-h-[2rem] flex items-start mb-1.5">
+                      {project.subtitle && (
+                        <p className="text-[11px] sm:text-xs uppercase tracking-wider text-[#d4af37] font-semibold leading-tight line-clamp-2">
+                          {project.subtitle}
+                        </p>
+                      )}
+                    </div>
+                    
+                    <div className="min-h-[2.75rem] sm:min-h-[3.25rem] flex items-start mb-2">
+                      <h3 className="text-lg sm:text-xl font-bold leading-snug text-white group-hover:text-[#d4af37] transition-colors line-clamp-2">
+                        {project.title}
+                      </h3>
+                    </div>
+
+                    <p className="text-sm text-gray-400 font-light mb-6 leading-relaxed line-clamp-3 flex-1">
                       {project.description}
                     </p>
 
@@ -491,7 +527,7 @@ export default function Projects() {
                           </span>
                         )}
                       </div>
-                      <span className="text-xs font-semibold text-[#d4af37] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 shrink-0">
+                      <span className="text-xs font-semibold text-[#d4af37] group-hover:text-black group-hover:bg-[#d4af37] px-2.5 py-1 rounded-md bg-[#d4af37]/10 border border-[#d4af37]/20 transition-all inline-flex items-center gap-1 shrink-0">
                         Details &rarr;
                       </span>
                     </div>
@@ -593,30 +629,33 @@ export default function Projects() {
                 <div className="overflow-y-auto flex-1 rounded-b-2xl">
                   {/* Hero Image */}
                   {selectedProject.id === "browser-ext" ? (
-                    <div className="w-full bg-[#0d0d0d] border-b border-white/5">
-                      {/* Screenshot gallery: popup (portrait) + settings (wide) */}
-                      <div className="flex flex-col sm:flex-row gap-3 p-4 sm:p-5 items-stretch">
-                        {/* Popup screenshot — natural portrait proportions */}
-                        <div className="flex-shrink-0 mx-auto sm:mx-0 w-[180px] sm:w-[200px] rounded-xl overflow-hidden border border-white/10 shadow-lg bg-white self-start">
-                          <Image
-                            src="/projects/urdu-nastaleeq-popup.webp"
-                            alt="Urdu Nastaleeq Chrome extension popup — on/off toggles, Body Size, Heading Size, Body Spacing and Heading Spacing sliders, Advanced Settings button"
-                            width={368}
-                            height={617}
-                            className="w-full h-auto"
-                            style={{ display: 'block' }}
-                          />
+                    <div className="w-full bg-[#0a0a0c] border-b border-white/10 p-4 sm:p-6">
+                      <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-stretch justify-center max-w-3xl mx-auto">
+                        {/* Popup screenshot — natural portrait proportions with framing */}
+                        <div className="flex flex-col items-center gap-1.5 shrink-0">
+                          <span className="text-[11px] font-mono uppercase tracking-wider text-[#d4af37]">Extension Popup</span>
+                          <div className="w-[170px] sm:w-[190px] h-[255px] sm:h-[285px] relative rounded-xl overflow-hidden border border-white/20 shadow-xl bg-white">
+                            <Image
+                              src="/projects/urdu-nastaleeq-popup.webp"
+                              alt="Urdu Nastaleeq Chrome extension popup showing on/off toggles and typography sliders"
+                              fill
+                              className="object-contain"
+                              sizes="190px"
+                            />
+                          </div>
                         </div>
-                        {/* Advanced Settings screenshot — wide, fills remaining space */}
-                        <div className="flex-1 min-w-0 rounded-xl overflow-hidden border border-white/10 shadow-lg bg-white">
-                          <Image
-                            src="/projects/urdu-nastaleeq-settings.webp"
-                            alt="Urdu Nastaleeq Advanced Settings — General, Font Sizes, Line Heights, Preview, Diagnostics showing Jameel Noori Nastaleeq loaded, Save Settings"
-                            width={1921}
-                            height={1511}
-                            className="w-full h-auto"
-                            style={{ display: 'block' }}
-                          />
+                        {/* Advanced Settings screenshot — wide, responsive */}
+                        <div className="flex flex-col items-center sm:items-start gap-1.5 flex-1 min-w-0 w-full">
+                          <span className="text-[11px] font-mono uppercase tracking-wider text-gray-400">Advanced Settings Showcase</span>
+                          <div className="w-full h-[200px] sm:h-[285px] relative rounded-xl overflow-hidden border border-white/20 shadow-xl bg-white">
+                            <Image
+                              src="/projects/urdu-nastaleeq-settings.webp"
+                              alt="Urdu Nastaleeq Advanced Settings page showing general settings, font sizing, line heights, preview panel, diagnostics, and Save Settings"
+                              fill
+                              className="object-contain"
+                              sizes="(max-width: 640px) 100vw, 600px"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>

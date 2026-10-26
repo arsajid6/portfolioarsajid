@@ -168,7 +168,7 @@ export default function Services() {
                   <div className="p-3 rounded-xl bg-white/5 w-fit group-hover:bg-[#d4af37]/10 transition-colors duration-300 text-[#d4af37]">
                     <service.icon className="w-6 h-6" />
                   </div>
-                  <span className="text-[11px] font-mono text-gray-500 uppercase tracking-wider">
+                  <span className="text-xs font-mono text-gray-400 group-hover:text-[#d4af37]/70 uppercase tracking-wider transition-colors">
                     0{index + 1}
                   </span>
                 </div>
@@ -179,7 +179,7 @@ export default function Services() {
                 <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#d4af37] transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-400 font-light leading-relaxed text-sm mb-6">
+                <p className="text-gray-400 font-light leading-relaxed text-sm mb-6 min-h-[3.5rem]">
                   {service.description}
                 </p>
 
@@ -200,12 +200,12 @@ export default function Services() {
               {/* Connected Portfolio Proof & CTA */}
               <div className="pt-4 border-t border-white/5 space-y-3">
                 <div className="flex flex-wrap items-center gap-1.5 text-xs">
-                  <span className="text-gray-500 font-medium">Proven In:</span>
+                  <span className="text-gray-400 font-medium">Proven In:</span>
                   {service.proof.map((p, pIdx) => (
                     <Link
                       key={pIdx}
                       href={p.href}
-                      className="px-2 py-0.5 rounded bg-white/5 text-gray-300 hover:text-[#d4af37] hover:bg-white/10 transition-colors"
+                      className="px-2 py-0.5 rounded bg-white/5 text-gray-300 hover:text-[#d4af37] hover:bg-white/10 transition-colors border border-white/5 hover:border-[#d4af37]/20"
                     >
                       {p.label}
                     </Link>
@@ -223,7 +223,7 @@ export default function Services() {
                   </a>
                   <a
                     href="#contact"
-                    className="text-xs text-gray-400 hover:text-white transition-colors"
+                    className="text-xs font-medium text-gray-400 hover:text-[#d4af37] transition-colors"
                   >
                     Quote Form &rarr;
                   </a>
