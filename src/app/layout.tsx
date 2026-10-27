@@ -12,14 +12,14 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolioarsajid.vercel.app"),
-  title: "Abdul Rehman Sajid | Full-Stack Web Developer & UI/UX Designer",
-  description: "Portfolio of Abdul Rehman Sajid — Full-Stack Web Developer & UI/UX Designer specializing in custom business websites, management systems, POS billing platforms, and WordPress solutions.",
+  title: "Abdul Rehman Sajid | Full-Stack Web Developer & Custom Software",
+  description: "Full-Stack Web Developer specializing in custom business websites, management systems, POS billing platforms, and WordPress solutions built for real workflows.",
   alternates: {
     canonical: "https://portfolioarsajid.vercel.app/",
   },
   openGraph: {
-    title: "Abdul Rehman Sajid | Full-Stack Web Developer",
-    description: "Professional Full-Stack Web Developer specializing in custom business websites, management systems, POS billing platforms, and WordPress solutions.",
+    title: "Abdul Rehman Sajid | Full-Stack Web Developer & Custom Software",
+    description: "Full-Stack Web Developer specializing in custom business websites, management systems, POS billing platforms, and WordPress solutions built for real workflows.",
     url: "https://portfolioarsajid.vercel.app/",
     siteName: "Abdul Rehman Sajid Portfolio",
     locale: "en_US",
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abdul Rehman Sajid | Full-Stack Web Developer",
-    description: "Professional Full-Stack Web Developer specializing in custom business websites, management systems, POS billing platforms, and WordPress solutions.",
+    title: "Abdul Rehman Sajid | Full-Stack Web Developer & Custom Software",
+    description: "Full-Stack Web Developer specializing in custom business websites, management systems, POS billing platforms, and WordPress solutions built for real workflows.",
     images: ["/og-image.png"],
   },
 };

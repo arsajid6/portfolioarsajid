@@ -26,32 +26,32 @@ import {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolioarsajid.vercel.app"),
-  title: "AccuroBuild Estimating — Construction Estimating & Takeoff Platform Case Study | Abdul Rehman Sajid",
-  description: "Comprehensive case study for AccuroBuild Estimating: A high-converting construction estimating corporate website with multi-trade quantity takeoff catalogs, blueprint submission funnels, and responsive architecture.",
+  title: "AccuroBuild Estimating — WordPress Corporate Website Case Study",
+  description: "Case study of AccuroBuild Estimating: A responsive corporate WordPress website with construction takeoff catalogs, blueprint upload funnels, and Elementor UI.",
   alternates: {
     canonical: "https://portfolioarsajid.vercel.app/projects/accurobuild",
   },
   openGraph: {
-    title: "AccuroBuild Estimating — Construction Estimating & Takeoff Platform Case Study",
-    description: "Construction Estimating & Quantity Takeoff corporate platform with CSI MasterFormat trade breakdowns, blueprint upload funnel, and client lead generation.",
+    title: "AccuroBuild Estimating — WordPress Corporate Website Case Study",
+    description: "Case study of AccuroBuild Estimating: A responsive corporate WordPress website with construction takeoff catalogs, blueprint upload funnels, and Elementor UI.",
     url: "https://portfolioarsajid.vercel.app/projects/accurobuild",
     siteName: "Abdul Rehman Sajid Portfolio",
     locale: "en_US",
     type: "article",
     images: [
       {
-        url: "/projects/accurobuild-homepage.png",
-        width: 1440,
-        height: 690,
-        alt: "AccuroBuild Estimating Homepage Screenshot",
+        url: "/projects/accurobuild-og.png",
+        width: 1200,
+        height: 630,
+        alt: "AccuroBuild Estimating — Construction Estimating Corporate Website",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AccuroBuild Estimating — Construction Estimating & Takeoff Platform Case Study | Abdul Rehman Sajid",
-    description: "Comprehensive case study: A high-converting construction estimating website with multi-trade quantity takeoff catalogs, blueprint submission funnels, and responsive architecture.",
-    images: ["/projects/accurobuild-homepage.png"],
+    title: "AccuroBuild Estimating — WordPress Corporate Website Case Study",
+    description: "Case study of AccuroBuild Estimating: A responsive corporate WordPress website with construction takeoff catalogs, blueprint upload funnels, and Elementor UI.",
+    images: ["/projects/accurobuild-og.png"],
   },
 };
 
@@ -232,10 +232,12 @@ const desktopScreenshots = [
 export default function AccuroBuildCaseStudy() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "AccuroBuild Estimating — Construction Estimating & Takeoff Platform Case Study",
-    "description": "Comprehensive case study of AccuroBuild Estimating: A high-converting construction estimating corporate website with multi-trade quantity takeoff catalogs and blueprint submission funnels.",
-    "image": "https://portfolioarsajid.vercel.app/projects/accurobuild-homepage.png",
+    "@type": "TechArticle",
+    "headline": "AccuroBuild Estimating — WordPress Corporate Website Case Study",
+    "description": "Comprehensive case study of AccuroBuild Estimating: A responsive corporate WordPress website with construction takeoff catalogs and blueprint submission funnels.",
+    "image": "https://portfolioarsajid.vercel.app/projects/accurobuild-og.png",
+    "datePublished": "2026-10-24",
+    "dateModified": "2026-10-27",
     "author": {
       "@type": "Person",
       "name": "Abdul Rehman Sajid",

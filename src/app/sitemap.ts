@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${baseUrl}/`,
-      lastModified: new Date("2026-10-22"),
+      lastModified: new Date("2026-10-26"),
       changeFrequency: "weekly",
       priority: 1.0,
     },
@@ -24,13 +24,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/projects/astore-pos`,
-      lastModified: new Date("2026-10-24"),
+      lastModified: new Date("2026-10-25"),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/projects/zia-ul-quran`,
-      lastModified: new Date("2026-10-24"),
+      lastModified: new Date("2026-10-25"),
       changeFrequency: "monthly",
       priority: 0.8,
     },

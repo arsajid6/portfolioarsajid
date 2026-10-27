@@ -28,14 +28,14 @@ import AStoreGallery from "./AStoreGallery";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolioarsajid.vercel.app"),
-  title: "AStore POS — Full-Stack Retail POS & Inventory Platform Case Study | Abdul Rehman Sajid",
-  description: "Comprehensive case study for AStore POS: A full-stack cloud Point of Sale and retail inventory management system featuring barcode checkout, multi-tender payments, offline billing resilience, stock controls, and role-based permissions.",
+  title: "AStore POS — Retail POS & Inventory Platform Case Study",
+  description: "Case study of AStore POS: Cloud Point of Sale and inventory management platform with barcode billing, offline resilience, returns, and role-based access.",
   alternates: {
     canonical: "https://portfolioarsajid.vercel.app/projects/astore-pos",
   },
   openGraph: {
-    title: "AStore POS — Full-Stack Retail POS & Inventory Platform Case Study",
-    description: "Full-Stack Point of Sale & Inventory Platform with barcode checkout, offline billing, stock control, returns, and role-based governance.",
+    title: "AStore POS — Retail POS & Inventory Platform Case Study",
+    description: "Case study of AStore POS: Cloud Point of Sale and inventory management platform with barcode billing, offline resilience, returns, and role-based access.",
     url: "https://portfolioarsajid.vercel.app/projects/astore-pos",
     siteName: "Abdul Rehman Sajid Portfolio",
     locale: "en_US",
@@ -51,8 +51,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AStore POS — Full-Stack Retail POS & Inventory Platform Case Study | Abdul Rehman Sajid",
-    description: "Comprehensive case study: A full-stack cloud Point of Sale and inventory platform with barcode billing, offline resilience, and role-based administration.",
+    title: "AStore POS — Retail POS & Inventory Platform Case Study",
+    description: "Case study of AStore POS: Cloud Point of Sale and inventory management platform with barcode billing, offline resilience, returns, and role-based access.",
     images: ["/projects/astore-dashboard.webp"],
   },
 };
@@ -217,12 +217,12 @@ const roleMatrix = [
 export default function AStorePosCaseStudy() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "AStore POS",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web-based (All modern browsers)",
-    "description": "Full-stack Point of Sale and retail inventory management system featuring barcode scanning, multi-tender payments, offline billing resilience, returns processing, and role-based permissions.",
-    "url": "https://portfolioarsajid.vercel.app/projects/astore-pos",
+    "@type": "TechArticle",
+    "headline": "AStore POS — Retail POS & Inventory Platform Case Study",
+    "description": "Comprehensive case study of AStore POS: Cloud Point of Sale and retail inventory management system featuring barcode scanning, multi-tender payments, and offline resilience.",
+    "image": "https://portfolioarsajid.vercel.app/projects/astore-dashboard.webp",
+    "datePublished": "2026-10-25",
+    "dateModified": "2026-10-27",
     "author": {
       "@type": "Person",
       "name": "Abdul Rehman Sajid",
@@ -232,6 +232,14 @@ export default function AStorePosCaseStudy() {
       "@type": "Person",
       "name": "Abdul Rehman Sajid",
       "url": "https://portfolioarsajid.vercel.app"
+    },
+    "url": "https://portfolioarsajid.vercel.app/projects/astore-pos",
+    "mainEntityOfPage": "https://portfolioarsajid.vercel.app/projects/astore-pos",
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "AStore POS",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web-based (Modern Browsers)"
     }
   };
 

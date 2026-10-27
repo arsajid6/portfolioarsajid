@@ -20,14 +20,14 @@ import {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolioarsajid.vercel.app"),
-  title: "Zia Graphics & Printers — Full-Stack Case Study | Abdul Rehman Sajid",
-  description: "Comprehensive case study for Zia Graphics & Printers: A custom commercial printing website and full-stack administrative management system developed with PHP, MySQL, JavaScript, and Bootstrap.",
+  title: "Zia Graphics — Business Website & Invoicing Portal Case Study",
+  description: "Case study of Zia Graphics: A commercial printing website with dynamic price calculators, quotation management, invoice generation, and expense tracking.",
   alternates: {
     canonical: "https://portfolioarsajid.vercel.app/projects/zia-graphics",
   },
   openGraph: {
-    title: "Zia Graphics & Printers — Full-Stack Case Study",
-    description: "Full-Stack Business Website & Custom Admin Management System with price calculator, quotation management, invoicing, and financial reporting.",
+    title: "Zia Graphics — Business Website & Invoicing Portal Case Study",
+    description: "Case study of Zia Graphics: A commercial printing website with dynamic price calculators, quotation management, invoice generation, and expense tracking.",
     url: "https://portfolioarsajid.vercel.app/projects/zia-graphics",
     siteName: "Abdul Rehman Sajid Portfolio",
     locale: "en_US",
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zia Graphics & Printers — Full-Stack Case Study | Abdul Rehman Sajid",
-    description: "Comprehensive case study: A custom commercial printing website and administrative management system developed with PHP, MySQL, JavaScript, and Bootstrap.",
+    title: "Zia Graphics — Business Website & Invoicing Portal Case Study",
+    description: "Case study of Zia Graphics: A commercial printing website with dynamic price calculators, quotation management, invoice generation, and expense tracking.",
     images: ["/projects/ziagraphics.png"],
   },
 };
@@ -240,8 +240,41 @@ const galleryScreenshots = [
 ];
 
 export default function ZiaGraphicsCaseStudy() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Zia Graphics & Printers — Business Website & Custom Invoicing Portal Case Study",
+    "description": "Comprehensive case study for Zia Graphics & Printers: A commercial printing website with dynamic price calculators, quotation management, invoice generation, and expense tracking.",
+    "image": "https://portfolioarsajid.vercel.app/projects/ziagraphics.png",
+    "datePublished": "2026-10-21",
+    "dateModified": "2026-10-27",
+    "author": {
+      "@type": "Person",
+      "name": "Abdul Rehman Sajid",
+      "url": "https://portfolioarsajid.vercel.app"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Abdul Rehman Sajid",
+      "url": "https://portfolioarsajid.vercel.app"
+    },
+    "url": "https://portfolioarsajid.vercel.app/projects/zia-graphics",
+    "mainEntityOfPage": "https://portfolioarsajid.vercel.app/projects/zia-graphics",
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "Zia Graphics Management System",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web-based (Modern Browsers)"
+    }
+  };
+
   return (
     <article className="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-24 sm:space-y-32">
+      {/* ── JSON-LD Structured Data for Enhanced SEO ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       
       {/* ── Breadcrumb & Back Link ── */}
       <nav aria-label="Breadcrumb" className="pt-2">

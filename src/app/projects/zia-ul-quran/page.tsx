@@ -23,14 +23,14 @@ import ZiaUlQuranGallery from "./ZiaUlQuranGallery";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolioarsajid.vercel.app"),
-  title: "Zia Ul Quran Academy — Online Quran Academy & Management System Case Study | Abdul Rehman Sajid",
-  description: "Comprehensive case study for Zia Ul Quran Academy: A full-stack distance learning platform combining a public student portal with role-based Admin, Teacher, and Student management systems built with Laravel, PHP, and MySQL.",
+  title: "Zia Ul Quran Academy — Online Academy & Portal Case Study",
+  description: "Case study of Zia Ul Quran Academy: Full-stack online learning platform with student portals, class scheduling, fee tracking, and verifiable certificates.",
   alternates: {
     canonical: "https://portfolioarsajid.vercel.app/projects/zia-ul-quran",
   },
   openGraph: {
-    title: "Zia Ul Quran Academy — Online Quran Academy & Management System Case Study",
-    description: "Complete distance learning and academy management platform with course catalogs, free trial booking, timetable scheduling, fee ledgers, and verifiable completion certificates.",
+    title: "Zia Ul Quran Academy — Online Academy & Portal Case Study",
+    description: "Case study of Zia Ul Quran Academy: Full-stack online learning platform with student portals, class scheduling, fee tracking, and verifiable certificates.",
     url: "https://portfolioarsajid.vercel.app/projects/zia-ul-quran",
     siteName: "Abdul Rehman Sajid Portfolio",
     locale: "en_US",
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zia Ul Quran Academy — Online Quran Academy & Management System Case Study | Abdul Rehman Sajid",
-    description: "Full-stack academy management platform with course catalogs, timetable scheduling, fee ledgers, and verifiable completion certificates.",
+    title: "Zia Ul Quran Academy — Online Academy & Portal Case Study",
+    description: "Case study of Zia Ul Quran Academy: Full-stack online learning platform with student portals, class scheduling, fee tracking, and verifiable certificates.",
     images: ["/projects/ziaulquran.png"],
   },
 };
@@ -213,12 +213,12 @@ const roleMatrix = [
 export default function ZiaUlQuranCaseStudy() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Zia Ul Quran Academy Platform",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "Web-based (All modern browsers)",
-    "description": "Full-stack online Quran academy and learning management platform with public course catalogs, free trial booking, multi-timezone class timetables, fee tracking, and verifiable completion certificates.",
-    "url": "https://portfolioarsajid.vercel.app/projects/zia-ul-quran",
+    "@type": "TechArticle",
+    "headline": "Zia Ul Quran Academy — Online Academy & Portal Case Study",
+    "description": "Comprehensive case study of Zia Ul Quran Academy: Full-stack online learning platform with student portals, class scheduling, fee tracking, and verifiable completion certificates.",
+    "image": "https://portfolioarsajid.vercel.app/projects/ziaulquran.png",
+    "datePublished": "2026-10-25",
+    "dateModified": "2026-10-27",
     "author": {
       "@type": "Person",
       "name": "Abdul Rehman Sajid",
@@ -228,6 +228,14 @@ export default function ZiaUlQuranCaseStudy() {
       "@type": "Person",
       "name": "Abdul Rehman Sajid",
       "url": "https://portfolioarsajid.vercel.app"
+    },
+    "url": "https://portfolioarsajid.vercel.app/projects/zia-ul-quran",
+    "mainEntityOfPage": "https://portfolioarsajid.vercel.app/projects/zia-ul-quran",
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "Zia Ul Quran Academy Platform",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web-based (Modern Browsers)"
     }
   };
 
