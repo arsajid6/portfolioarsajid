@@ -159,23 +159,26 @@ const projectsData: Project[] = [
   {
     id: "hm-security",
     title: "HM Security",
-    subtitle: "Corporate Surveillance & Security Platform",
+    subtitle: "Security Services Website & Functional Admin Platform",
     categories: ["Business Websites"],
-    description: "A professional corporate website tailored for a security and surveillance services business, featuring structured service listings, responsive design, and clear lead inquiry points.",
-    tags: ["Custom Website", "Responsive Web Development", "Business Website"],
+    description: "A complete customer-facing security services website with working appointment booking, product and pricing management, project tracking, customer management, and administrative controls.",
+    tags: ["Custom Web Platform", "Admin Management Portal", "Product & Pricing Management", "Appointment Booking"],
     image: "/projects/hmsecurity.png",
     link: "https://hmsecurity.store/",
     caseStudy: {
-      overview: "HM Security is a professional corporate web presence for a security and surveillance services business. The site presents structured security service offerings, builds commercial credibility, and provides clear pathways for residential and commercial clients to make inquiries.",
-      solution: "Developed a professional, mobile-responsive business website focused on performance, clear service presentation, and a seamless client inquiry experience.",
+      overview: "HM Security is an owner-confirmed working digital business solution for a commercial security contractor. The platform combines a public security services website with a working Free Site Survey appointment request workflow, alongside an integrated back-office administrative platform for hardware pricing, active project lifecycles, customer reviews, and site content.",
+      solution: "Engineered a custom, mobile-responsive full-stack platform featuring specialized surveillance catalogs, dynamic electric fence price estimators, working appointment booking forms, and centralized administrative controls.",
       features: [
-        "Corporate service catalog for CCTV, access control, and guard services",
-        "Lead capture inquiry forms for residential and commercial security audits",
-        "Responsive cross-device layout and optimized media assets",
-        "Clear service category navigation and commercial credibility presentation"
+        "Customer-facing security services website for CCTV, electric fences, gate automation & fire alarms",
+        "Working Free Site Survey & appointment booking form with multi-service checklist",
+        "Functional admin dashboard managing fire alarm pricing & electric fence parameter overrides",
+        "Working project tracking pipeline with active-to-completed 'Mark Complete' transitions",
+        "Customer review management and configurable homepage metric settings",
+        "11 owner-confirmed genuine system screenshots featured in the dedicated case study"
       ],
-      userBenefits: "Establishes an authoritative online presence for the security business, simplifies the client inquiry journey, and presents service packages clearly to prospective residential and commercial customers.",
-      inquiryText: "Hi Abdul Rehman, I saw HM Security in your portfolio and would like to discuss a corporate business website."
+      userBenefits: "Delivers an authoritative commercial web presence, streamlines customer appointment requests, and provides administrative staff with direct tools to manage product pricing, project portfolios, and public business content.",
+      developerRole: "Full-Stack Web Development & Architecture: Public corporate website, appointment booking workflow, back-office administrative management portals, and responsive cross-device layout.",
+      inquiryText: "Hi Abdul Rehman, I saw HM Security in your portfolio and would like to discuss developing a commercial website and administrative management platform."
     }
   },
   {
@@ -805,6 +808,14 @@ export default function Projects() {
                         {selectedProject.id === "astore-pos" && (
                           <a
                             href="/projects/astore-pos"
+                            className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 hover:border-[#d4af37] transition-all border border-white/20 text-sm"
+                          >
+                            View Case Study &amp; Gallery &rarr;
+                          </a>
+                        )}
+                        {selectedProject.id === "hm-security" && (
+                          <a
+                            href="/projects/hm-security"
                             className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 hover:border-[#d4af37] transition-all border border-white/20 text-sm"
                           >
                             View Case Study &amp; Gallery &rarr;
