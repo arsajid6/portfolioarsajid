@@ -184,22 +184,31 @@ const projectsData: Project[] = [
   {
     id: "libas-store",
     title: "Libas Online Store",
-    subtitle: "Modern E-Commerce Storefront",
+    subtitle: "Full-Stack E-Commerce & Admin Platform",
     categories: ["E-Commerce & Apps"],
-    description: "A fast, modern e-commerce storefront built with a sleek minimalist aesthetic, rapid catalog navigation, and WhatsApp direct ordering.",
-    tags: ["Next.js", "React", "Tailwind CSS"],
+    description: "Full-stack fashion e-commerce storefront with product variants, shopping cart, customer accounts, order tracking, and an extensive back-office management dashboard.",
+    tags: ["React", "Node.js", "Express", "PostgreSQL", "REST API"],
     image: "/projects/libas.png",
     link: "https://libas-three.vercel.app/",
     caseStudy: {
-      overview: "A modern e-commerce storefront built with a sleek minimalist aesthetic, designed to showcase fashion collections cleanly and deliver rapid mobile shopping transitions.",
-      solution: "Engineered a fast online store ensuring seamless product browsing, category filtering, and direct WhatsApp order dispatch through highly optimized edge deployment.",
+      overview: "Libas Online Store (branded Dua Libas) is a full-stack fashion e-commerce and retail management platform. Engineered with a high-performance customer storefront and a comprehensive back-office operations hub, it streamlines the complete fashion commerce lifecycle from collection discovery and variant inventory matrix to multi-step checkout and administrative fulfillment.",
+      solution: "Developed using React, Node.js, Express, and PostgreSQL, deployed across modern cloud infrastructure. The platform features an interactive customer shopping journey (quick view modal, slide-over cart, multi-step checkout with COD and bank transfer), order tracking, customer accounts, and an executive administration dashboard covering variant-level stock alerts, order processing, shipping configuration, dynamic menu builders, and security audit journals.",
       features: [
-        "Product catalog with structured category filtering",
-        "Responsive, mobile-first product cards & image galleries",
-        "Direct WhatsApp cart review and checkout dispatch",
-        "Edge-deployed on Next.js for high reliability and uptime"
+        "Responsive storefront with promotional hero slider & dynamic category navigation",
+        "Product quick view modal with real-time size & color swatches",
+        "Slide-over cart drawer with real-time quantity modifiers & subtotal calculation",
+        "Multi-step checkout workflow with Cash on Delivery & manual bank transfer",
+        "Customer order tracking via Order ID/email or direct secure token",
+        "Customer account hub with saved addresses and past order history",
+        "Executive admin operations dashboard with revenue & fulfillment metrics",
+        "Variant-level inventory matrix tracking individual SKU size & color combinations",
+        "Automated out-of-stock & low-stock monitoring alerts",
+        "Order management queue with direct WhatsApp customer verification action",
+        "Administrative store settings, shipping zones, and security audit logs"
       ],
-      inquiryText: "Hi Abdul Rehman, I saw Libas Online Store in your portfolio and would like to discuss an e-commerce website."
+      userBenefits: "Eliminates stock discrepancies with variant-level inventory control, accelerates order dispatch with direct WhatsApp verification, and provides store owners with full autonomy over products, marketing banners, and delivery rates.",
+      developerRole: "Full-Stack Web Development & Architecture: Public e-commerce storefront, product variant matrix, multi-step checkout workflow, back-office administrative portals, and security audit logging.",
+      inquiryText: "Hi Abdul Rehman, I saw Libas Online Store in your portfolio and would like to discuss a full-stack e-commerce and management platform."
     }
   },
   {
@@ -816,6 +825,14 @@ export default function Projects() {
                         {selectedProject.id === "hm-security" && (
                           <a
                             href="/projects/hm-security"
+                            className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 hover:border-[#d4af37] transition-all border border-white/20 text-sm"
+                          >
+                            View Case Study &amp; Gallery &rarr;
+                          </a>
+                        )}
+                        {selectedProject.id === "libas-store" && (
+                          <a
+                            href="/projects/libas-store"
                             className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 text-white font-bold rounded-xl hover:bg-white/20 hover:border-[#d4af37] transition-all border border-white/20 text-sm"
                           >
                             View Case Study &amp; Gallery &rarr;
